@@ -12,13 +12,25 @@
     </div>
 
     <div class="container hero-content">
-        <img src="assets/images/brand/text_logo.svg" alt="Pure Glow Wellness" class="hero-logo">
-        <h1><?= htmlspecialchars($data['hero']['headline'] ?? '') ?></h1>
-        <p class="subheading"><?= nl2br(htmlspecialchars($data['hero']['subheading'] ?? '')) ?></p>
+        <img src="assets/images/brand/text_logo.svg" alt="" aria-hidden="true" class="hero-logo">
+        <h1 class="visually-hidden"><?= htmlspecialchars($data['hero']['headline'] ?? '') ?></h1>
+        <p class="lead-line"><?= nl2br(htmlspecialchars($data['hero']['lead_line'] ?? '')) ?></p>
+        
+        <div class="hero-intro">
+            <p><?= nl2br(htmlspecialchars($data['hero']['intro'] ?? '')) ?></p>
+        </div>
 
         <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Get in Touch</a>
-            <a href="#services" class="btn btn-secondary">Explore Services</a>
+            <a href="#contact" class="btn btn-primary"><?= htmlspecialchars($data['hero']['primary_cta'] ?? 'Enquire now') ?></a>
+            <a href="mailto:<?= htmlspecialchars($data['contact']['email'] ?? '') ?>" class="btn btn-secondary"><?= htmlspecialchars($data['hero']['secondary_cta'] ?? 'Email me') ?></a>
+        </div>
+
+        <div class="hero-showpiece">
+            <p><?= htmlspecialchars($data['hero']['showpiece_line'] ?? '') ?></p>
+        </div>
+
+        <div class="hero-trust">
+            <small><?= htmlspecialchars($data['hero']['mini_trust_line'] ?? '') ?></small>
         </div>
     </div>
 </section>

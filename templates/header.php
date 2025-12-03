@@ -11,9 +11,11 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="<?= htmlspecialchars($data['settings']['site_title'] ?? 'Pure Glow Wellness') ?>">
     <meta property="og:description" content="<?= htmlspecialchars($data['settings']['meta_description'] ?? '') ?>">
-    <?php if (!empty($data['settings']['og_image'])): ?>
-    <meta property="og:image" content="<?= htmlspecialchars($data['settings']['og_image']) ?>">
-    <?php endif; ?>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mthstaging.co.uk/pureglow/">
+    <meta property="og:image" content="https://www.mthstaging.co.uk/pureglow/assets/images/hero/hero_image-1200w.webp">
+    <meta property="og:image:alt" content="Pure Glow Wellness in Marple">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Canonical & Favicon -->
     <link rel="canonical" href="https://www.mthstaging.co.uk/pureglow/">
@@ -29,21 +31,25 @@
       "@type": "LocalBusiness",
       "name": "Pure Glow Wellness",
       "image": "https://www.mthstaging.co.uk/pureglow/assets/images/brand/text_logo.svg",
-      "description": "<?= htmlspecialchars($data['settings']['meta_description'] ?? '') ?>",
+      "description": <?= json_encode($data['settings']['meta_description'] ?? '', JSON_UNESCAPED_SLASHES) ?>,
       "url": "https://www.mthstaging.co.uk/pureglow/",
-      "telephone": "<?= htmlspecialchars($data['contact']['phone'] ?? '') ?>",
-      "email": "<?= htmlspecialchars($data['contact']['email'] ?? '') ?>",
+      "telephone": "+447504800028",
+      "email": <?= json_encode($data['contact']['email'] ?? '', JSON_UNESCAPED_SLASHES) ?>,
+      "sameAs": [
+        <?= json_encode($PGW_FACEBOOK_PAGE_URL, JSON_UNESCAPED_SLASHES) ?>,
+        <?= json_encode($PGW_INSTAGRAM_URL, JSON_UNESCAPED_SLASHES) ?>
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Marple",
-        "addressRegion": "Stockport",
+        "addressRegion": "Greater Manchester",
         "addressCountry": "UK"
       },
       "priceRange": "££"
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime('assets/css/style.css') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,8 +71,6 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#treatments">Treatments</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>

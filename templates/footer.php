@@ -1,22 +1,23 @@
     </main>
     <footer class="site-footer">
         <div class="container">
-            <?php if (!empty($data['social']['facebook']) || !empty($data['social']['instagram']) || !empty($data['social']['threads'])): ?>
             <div class="social-links">
-                <?php if (!empty($data['social']['facebook'])): ?>
-                    <a href="<?= htmlspecialchars($data['social']['facebook']) ?>" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <?php endif; ?>
-                <?php if (!empty($data['social']['instagram'])): ?>
-                    <a href="<?= htmlspecialchars($data['social']['instagram']) ?>" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <?php endif; ?>
-                <?php if (!empty($data['social']['threads'])): ?>
-                    <a href="<?= htmlspecialchars($data['social']['threads']) ?>" target="_blank" rel="noopener noreferrer">Threads</a>
-                <?php endif; ?>
+                <a class="footer-social" href="<?php echo htmlspecialchars($PGW_FACEBOOK_PAGE_URL); ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/socials/facebook_icon_white.svg" alt="" aria-hidden="true" class="footer-social__icon" width="18" height="18">
+                    Facebook
+                </a>
+                <a class="footer-social" href="<?php echo htmlspecialchars($PGW_INSTAGRAM_URL); ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/socials/instagram_icon_white.svg" alt="" aria-hidden="true" class="footer-social__icon" width="18" height="18">
+                    Instagram
+                </a>
+                <a class="footer-social" href="<?php echo htmlspecialchars($PGW_MESSENGER_URL); ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/images/socials/messenger_icon_white.svg" alt="" aria-hidden="true" class="footer-social__icon" width="18" height="18">
+                    Messenger
+                </a>
             </div>
-            <?php endif; ?>
-            <p>&copy; <?= date('Y') ?> Pure Glow Wellness. All rights reserved.</p>
-            <p>Website by <a href="https://www.marpletech.co.uk" target="_blank" rel="noopener noreferrer">Marple Tech Help</a></p>
+            <p><?= htmlspecialchars($data['footer']['microcopy'] ?? 'Pure Glow Wellness • Marple, Stockport') ?></p>
             <p><a href="privacy-policy.html">Privacy Policy</a></p>
+            <p class="designer-credit">Website designed by <a href="https://www.marpletech.co.uk" target="_blank" rel="noopener noreferrer">Marple Tech Help</a></p>
         </div>
     </footer>
     <script src="assets/js/main.js"></script>

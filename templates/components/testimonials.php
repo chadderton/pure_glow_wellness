@@ -3,20 +3,16 @@
         <h2><?= htmlspecialchars($data['testimonials']['title'] ?? '') ?></h2>
         
         <div class="testimonials-grid">
+            <?php for ($i = 1; $i <= 3; $i++): 
+                $text = $data['testimonials']["review_{$i}_text"] ?? '';
+                $author = $data['testimonials']["review_{$i}_author"] ?? '';
+                if ($text):
+            ?>
             <div class="testimonial-card fade-in-section">
-                <blockquote>“Placeholder review — Caroline to provide real review text here.”</blockquote>
-                <cite>— Reviewer name</cite>
+                <blockquote>“<?= nl2br(htmlspecialchars($text)) ?>”</blockquote>
+                <cite>— <?= htmlspecialchars($author) ?></cite>
             </div>
-
-            <div class="testimonial-card fade-in-section">
-                <blockquote>“Placeholder review — add client feedback from free facials.”</blockquote>
-                <cite>— Reviewer name</cite>
-            </div>
-
-            <div class="testimonial-card fade-in-section">
-                <blockquote>“Placeholder review — Caroline to provide photos or quotes.”</blockquote>
-                <cite>— Reviewer name</cite>
-            </div>
+            <?php endif; endfor; ?>
         </div>
     </div>
 </section>

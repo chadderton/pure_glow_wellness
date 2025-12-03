@@ -1,47 +1,109 @@
 {
   "settings": {
-    "site_title": "Pure Glow Wellness | Holistic Facials in Marple",
-    "meta_description": "Experience relaxing, holistic facials tailored to your skin and wellbeing at Pure Glow Wellness in Marple.",
+    "site_title": "Pure Glow Wellness | Facials & Holistic Wellbeing in Marple",
+    "meta_description": "Facials & holistic wellbeing in Marple. Calm, tailored treatments in a peaceful private studio.",
     "og_image": ""
   },
   "social": {
-    "facebook": "",
-    "instagram": "",
-    "threads": ""
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "threads": "https://threads.net",
+    "messenger": "https://m.me"
   },
   "hero": {
-    "headline": "Relaxing Facials in Marple",
-    "subheading": "Holistic facials tailored to your skin and wellbeing.",
+    "headline": "Pure Glow Wellness",
+    "lead_line": "Facials & holistic wellbeing in Marple. Gentle, tailored treatments in a peaceful private studio.",
+    "intro": "I created Pure Glow Wellness to help people feel comfortable in their own skin. I offer facials, natural skincare support, and wellbeing treatments, with more to come as I continue my training.",
+    "primary_cta": "Enquire now",
+    "secondary_cta": "Email me",
+    "showpiece_line": "A calm, private space. Perfect if you’re overwhelmed, burnt out, or just need an hour that’s really yours.",
+    "mini_trust_line": "Marple, Stockport • Appointments by arrangement • Friendly, unrushed sessions",
     "hero_image": "assets/images/hero/hero_image.webp",
     "hero_image_alt": "Peaceful wellness atmosphere"
   },
   "about": {
-    "title": "Meet Caroline Hines",
-    "body": "Hi, I’m Caroline — the therapist behind Pure Glow Wellness. After years working in finance and insurance, I reached a turning point: I wanted to build a life and career centred around calm, connection, and meaningful wellbeing.\n\nI now offer restorative facials, natural skincare support, and gentle wellness treatments from my quiet private studio here in Marple. My approach is calm, personal, and designed with women in mind — especially those navigating mid-life changes, stress, or recovery.",
-    "quote": "Your facial is never rushed or routine. I adapt everything to your skin, your comfort, and how you want to feel.",
-    "journey_title": "My Journey",
-    "journey_body": "This space is a result of my own shift into wellness later in life. I’m continuing my training, including women’s personal training and massage therapy, so I can support clients in a more holistic way — mind, skin, and body.",
+    "title": "My story",
+    "body": "Hi, I’m Caroline. After years working in insurance and finance, I decided it was time to do something that felt meaningful, not just “a job”. I retrained in facials and holistic wellbeing because I love the way a calm space and the right treatment can change how you feel.\n\nEverything I do is gentle, thoughtful, and tailored. Some people come purely for relaxation. Others want support as their skin changes with stress, hormones, or life events. Whatever has brought you here, you’ll be welcomed, listened to, and never rushed.\n\nPure Glow Wellness is my umbrella for three strands: facials (open now), corporate wellbeing, and PT for women navigating midlife and menopause (coming later as I complete my training).",
+    "closing_line": "If you’re not sure what you need yet, just message me. I’ll help you choose what’s right.",
     "portrait": "assets/images/about/about_caroline.webp",
-    "portrait_alt": "Caroline Hines, Pure Glow Wellness Therapist"
+    "portrait_alt": "Caroline Hines"
+  },
+  "strands": {
+    "title": "One umbrella, three strands",
+    "cards": [
+      {
+        "title": "Pure Glow Facials (open now)",
+        "copy": "Relaxing, skin-supporting facials tailored to your needs on the day. Calm, holistic, and never routine.",
+        "icon": "assets/images/icons/icon-relax.svg"
+      },
+      {
+        "title": "Pure Glow Corporate",
+        "copy": "Wellbeing sessions for workplaces, designed to help people reset, de-stress, and feel looked after during busy periods.",
+        "icon": "assets/images/icons/icon-bespoke.svg"
+      },
+      {
+        "title": "Pure Glow PT (coming later)",
+        "copy": "Strength and confidence-focused training for women, especially around midlife and menopause. I’m currently training and I’ll share details here when I’m ready.",
+        "icon": "assets/images/icons/icon-therapist.svg"
+      }
+    ],
+    "note": "Right now, facials are my focus. The other strands are being built carefully, not rushed."
   },
   "treatments": {
-    "title": "Our Treatments",
-    "description": "We offer a range of treatments..."
-  },
-  "benefits": {
-    "title": "Why Choose Us?",
-    "list": "Relaxation\nBespoke Treatments\nPrivate Studio\nExpert Therapist"
-  },
-  "pricing": {
-    "title": "Pricing",
-    "info": "Contact us for pricing details."
-  },
-  "testimonials": {
-    "title": "What our clients say"
+    "title": "Treatments",
+    "intro": "No two faces (or weeks) are the same, so everything I offer is tailored.",
+    "list": [
+      {
+        "title": "Bespoke Facial",
+        "duration": "60 minutes (approx.)",
+        "description": "A calming facial customised to your skin on the day. Ideal if you want relaxation, glow, and a treatment that feels personal, not routine.",
+        "image": "assets/images/services/facial.webp"
+      },
+      {
+        "title": "Express Skin Reset",
+        "duration": "30 minutes (approx.)",
+        "description": "A focused treatment to refresh tired skin and leave you feeling more like yourself. Perfect if you’re short on time but need a boost.",
+        "image": "assets/images/services/skincare.webp"
+      },
+      {
+        "title": "Indian Head Massage",
+        "duration": "30–45 minutes (approx.)",
+        "description": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Perfect during stressful seasons.",
+        "image": "assets/images/services/indian_head_massage.webp"
+      },
+      {
+        "title": "Natural Skincare Support",
+        "duration": "Message me to arrange",
+        "description": "If your skin is changing and you’re not sure where to start, I can help you build a simple, sensible routine with gentle product guidance.",
+        "image": "assets/images/services/natural_skincare_support.webp"
+      }
+    ],
+    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. If you’d like a recommendation or a quote, just message me."
   },
   "contact": {
-    "title": "Get in Touch",
-    "email": "caroline@pureglowwellness.com",
-    "phone": "01234 567890"
+    "title": "Get in touch",
+    "intro": "I don’t use online booking at the moment because my availability can vary while I’m still building the business. The easiest way to start is to send me a message with:",
+    "instructions": [
+      "what you’re interested in (facial / head massage / not sure yet)",
+      "any skin concerns or goals (only if you’d like to share)",
+      "a couple of days/times that usually suit you"
+    ],
+    "outro": "I’ll reply with my current availability and a simple recommendation.",
+    "phone": "07504 800028",
+    "email": "pureglowfacials@gmail.com",
+    "button_text": "Send message",
+    "success_message": "Thanks. Your message has been sent. I’ll get back to you as soon as I can with availability and a recommendation."
+  },
+  "testimonials": {
+    "title": "Client feedback",
+    "review_1_text": "Placeholder review — Caroline to provide real review text here.",
+    "review_1_author": "Reviewer name",
+    "review_2_text": "Placeholder review — add client feedback from free facials.",
+    "review_2_author": "Reviewer name",
+    "review_3_text": "Placeholder review — Caroline to provide photos or quotes.",
+    "review_3_author": "Reviewer name"
+  },
+  "footer": {
+      "microcopy": "Pure Glow Wellness • Marple, Stockport"
   }
 }

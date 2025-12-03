@@ -1,0 +1,4 @@
+.env
+vendor/
+content/draft.json
+content/contact_log.txt

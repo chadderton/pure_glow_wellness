@@ -1,52 +1,122 @@
 <?php
-session_start();
+declare(strict_types=1);
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../index.php");
-    exit;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+header('Content-Type: application/json; charset=utf-8');
+
+function respond(int $code, array $payload): void {
+  http_response_code($code);
+  echo json_encode($payload);
+  exit;
 }
 
-// 1. Honeypot Check
-if (!empty($_POST['website'])) {
-    // Bot detected! Pretend to succeed but do nothing.
-    die("Message sent.");
+require __DIR__ . '/../vendor/autoload.php';
+
+// Honeypot
+if (!empty($_POST['website'] ?? '')) {
+  respond(200, ['ok' => true]);
 }
 
-// 2. Time Check (Minimum 3 seconds to fill form)
-$min_time = 3;
-$submitted_time = isset($_POST['form_time']) ? (int)$_POST['form_time'] : 0;
-$current_time = time();
+// Basic rate limit (per IP, 1 request per 20 seconds)
+$ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$rateFile = sys_get_temp_dir() . '/pgw_rate_' . preg_replace('/[^a-zA-Z0-9_\-]/', '_', $ip);
+$now = time();
+if (is_file($rateFile)) {
+  $last = (int)@file_get_contents($rateFile);
+  if ($last > 0 && ($now - $last) < 20) {
+    respond(429, ['ok' => false, 'error' => 'Please wait a moment and try again.']);
+  }
+}
+@file_put_contents($rateFile, (string)$now);
 
-if (($current_time - $submitted_time) < $min_time) {
-    // Too fast! Likely a bot.
-    die("Please wait a moment before sending.");
+$name    = trim((string)($_POST['name'] ?? ''));
+$email   = trim((string)($_POST['email'] ?? ''));
+$message = trim((string)($_POST['message'] ?? ''));
+
+if ($name === '' || $email === '' || $message === '') {
+  respond(400, ['ok' => false, 'error' => 'Please fill in all fields.']);
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  respond(400, ['ok' => false, 'error' => 'Please enter a valid email address.']);
 }
 
-// 3. Sanitize & Validate
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+// CONFIG
+$SMTP_HOST = 'mail.mthstaging.co.uk';
+$SMTP_PORT = 465;
+$SMTP_USER = 'mailer@mthstaging.co.uk';
+$FROM_EMAIL = 'mailer@mthstaging.co.uk';
+$FROM_NAME  = 'Pure Glow Wellness';
+$TO_EMAIL   = 'martyn@marpletech.co.uk';
+$TO_NAME    = 'Marple Tech Help';
 
-if (!$name || !$email || !$message) {
-    die("Please fill in all fields.");
+// Load SMTP_PASS from .env
+$envPath = __DIR__ . '/../.env';
+$SMTP_PASS = '';
+
+if (file_exists($envPath)) {
+  $env = parse_ini_file($envPath, false, INI_SCANNER_RAW);
+  $SMTP_PASS = (string)($env['SMTP_PASS'] ?? '');
+  $SMTP_PASS = trim($SMTP_PASS);
+  // Strip surrounding quotes if present
+  if ((str_starts_with($SMTP_PASS, '"') && str_ends_with($SMTP_PASS, '"')) ||
+      (str_starts_with($SMTP_PASS, "'") && str_ends_with($SMTP_PASS, "'"))) {
+    $SMTP_PASS = substr($SMTP_PASS, 1, -1);
+  }
 }
 
-// 4. Send Email
-$to = "martyn@marpletech.co.uk"; // TODO: Update this to the client's actual email address
-$subject = "New Contact from Pure Glow Wellness: $name";
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
-
-if (mail($to, $subject, $message, $headers)) {
-    // Log success for debugging
-    file_put_contents("../content/contact_log.txt", "[$current_time] SENT: $name ($email)\n", FILE_APPEND);
-} else {
-    // Log failure
-    file_put_contents("../content/contact_log.txt", "[$current_time] FAILED: $name ($email)\n", FILE_APPEND);
-    die("Sorry, there was an error sending your message. Please try again later.");
+if ($SMTP_PASS === '') {
+  error_log('[PGW contact] SMTP_PASS not found in .env');
+  respond(500, ['ok' => false, 'error' => 'Server configuration error.']);
 }
 
-// 5. Redirect with Success
-$_SESSION['flash_message'] = "Thank you! Your message has been sent.";
-header("Location: ../index.php#contact");
-exit;
+try {
+  $mail = new PHPMailer(true);
+
+  $mail->isSMTP();
+  $mail->Host       = $SMTP_HOST;
+  $mail->SMTPAuth   = true;
+  $mail->Username   = $SMTP_USER;
+  $mail->Password   = $SMTP_PASS;
+  $mail->Port       = $SMTP_PORT;
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+
+  // Identity / headers
+  $mail->CharSet = 'UTF-8';
+  $mail->setFrom($FROM_EMAIL, $FROM_NAME);
+  $mail->addAddress($TO_EMAIL, $TO_NAME);
+  $mail->addReplyTo($email, $name);
+  $mail->MessageID = sprintf('<%s.%s@%s>', bin2hex(random_bytes(6)), (string)$now, 'mthstaging.co.uk');
+  $mail->addCustomHeader('X-Mailer', 'PureGlowContact/1.0');
+
+  // Content
+  $safeName  = preg_replace("/[\r\n]+/", ' ', $name);
+  $safeEmail = preg_replace("/[\r\n]+/", ' ', $email);
+
+  $mail->Subject = "Pure Glow website enquiry: {$safeName}";
+  $mail->isHTML(false);
+
+  $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+  $ref = $_SERVER['HTTP_REFERER'] ?? 'unknown';
+
+  $body =
+    "Website enquiry\n\n" .
+    "Name: {$safeName}\n" .
+    "Email: {$safeEmail}\n\n" .
+    "Message:\n{$message}\n\n" .
+    "----\n" .
+    "IP: {$ip}\n" .
+    "Referrer: {$ref}\n" .
+    "User-Agent: {$ua}\n";
+
+  $mail->Body = $body;
+  $mail->AltBody = $body;
+
+  $mail->send();
+  respond(200, ['ok' => true]);
+
+} catch (Exception $e) {
+  error_log('[PGW contact] PHPMailer error: ' . ($mail->ErrorInfo ?: $e->getMessage()));
+  respond(500, ['ok' => false, 'error' => 'Message could not be sent. Please email directly.']);
+}

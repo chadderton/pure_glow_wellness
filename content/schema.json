@@ -13,6 +13,7 @@
       "fields": {
         "facebook": { "type": "text", "label": "Facebook URL" },
         "instagram": { "type": "text", "label": "Instagram URL" },
+        "messenger": { "type": "text", "label": "Messenger URL (m.me/...)" },
         "threads": { "type": "text", "label": "Threads URL" }
       }
     },
@@ -44,11 +45,11 @@
         "description": { "type": "textarea", "label": "Description" }
       }
     },
-    "benefits": {
-      "title": "Benefits Section",
+    "strands": {
+      "title": "Strands (Three Pillars)",
       "fields": {
         "title": { "type": "text", "label": "Heading" },
-        "list": { "type": "textarea", "label": "Benefits List (One per line)" }
+        "note": { "type": "textarea", "label": "Note (e.g. 'Right now, facials are my focus...')" }
       }
     },
     "pricing": {
@@ -61,7 +62,13 @@
     "testimonials": {
       "title": "Testimonials Section",
       "fields": {
-        "title": { "type": "text", "label": "Heading" }
+        "title": { "type": "text", "label": "Heading" },
+        "review_1_text": { "type": "textarea", "label": "Review 1 Text" },
+        "review_1_author": { "type": "text", "label": "Review 1 Author" },
+        "review_2_text": { "type": "textarea", "label": "Review 2 Text" },
+        "review_2_author": { "type": "text", "label": "Review 2 Author" },
+        "review_3_text": { "type": "textarea", "label": "Review 3 Text" },
+        "review_3_author": { "type": "text", "label": "Review 3 Author" }
       }
     },
     "contact": {
