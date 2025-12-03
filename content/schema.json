@@ -21,15 +21,20 @@
       "fields": {
         "headline": { "type": "text", "label": "Headline" },
         "subheading": { "type": "textarea", "label": "Subheading" },
-        "hero_image": { "type": "image", "label": "Background Image" }
+        "hero_image": { "type": "image", "label": "Background Image" },
+        "hero_image_alt": { "type": "text", "label": "Background Image Alt Text" }
       }
     },
     "about": {
       "title": "About Section",
       "fields": {
         "title": { "type": "text", "label": "Heading" },
-        "body": { "type": "textarea", "label": "Body Text" },
-        "portrait": { "type": "image", "label": "Portrait Image" }
+        "body": { "type": "textarea", "label": "Main Body Text" },
+        "quote": { "type": "textarea", "label": "Callout Quote" },
+        "journey_title": { "type": "text", "label": "Journey Heading" },
+        "journey_body": { "type": "textarea", "label": "Journey Text" },
+        "portrait": { "type": "image", "label": "Portrait Image" },
+        "portrait_alt": { "type": "text", "label": "Portrait Image Alt Text" }
       }
     },
     "treatments": {

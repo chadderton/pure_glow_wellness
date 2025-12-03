@@ -12,12 +12,17 @@
   "hero": {
     "headline": "Relaxing Facials in Marple",
     "subheading": "Holistic facials tailored to your skin and wellbeing.",
-    "hero_image": "uploads/images/hero.jpg"
+    "hero_image": "assets/images/hero/hero_image.webp",
+    "hero_image_alt": "Peaceful wellness atmosphere"
   },
   "about": {
-    "title": "Meet Caroline",
-    "body": "Hi, I’m Caroline…",
-    "portrait": "uploads/images/caroline.jpg"
+    "title": "Meet Caroline Hines",
+    "body": "Hi, I’m Caroline — the therapist behind Pure Glow Wellness. After years working in finance and insurance, I reached a turning point: I wanted to build a life and career centred around calm, connection, and meaningful wellbeing.\n\nI now offer restorative facials, natural skincare support, and gentle wellness treatments from my quiet private studio here in Marple. My approach is calm, personal, and designed with women in mind — especially those navigating mid-life changes, stress, or recovery.",
+    "quote": "Your facial is never rushed or routine. I adapt everything to your skin, your comfort, and how you want to feel.",
+    "journey_title": "My Journey",
+    "journey_body": "This space is a result of my own shift into wellness later in life. I’m continuing my training, including women’s personal training and massage therapy, so I can support clients in a more holistic way — mind, skin, and body.",
+    "portrait": "assets/images/about/about_caroline.webp",
+    "portrait_alt": "Caroline Hines, Pure Glow Wellness Therapist"
   },
   "treatments": {
     "title": "Our Treatments",
@@ -25,7 +30,7 @@
   },
   "benefits": {
     "title": "Why Choose Us?",
-    "list": "Relaxation\nGlowing Skin\nNatural Products"
+    "list": "Relaxation\nBespoke Treatments\nPrivate Studio\nExpert Therapist"
   },
   "pricing": {
     "title": "Pricing",

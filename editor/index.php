@@ -52,7 +52,7 @@ $draft = json_decode(file_get_contents("../content/draft.json"), true);
                         <input type="hidden" name="<?= $key ?>__<?= $fieldKey ?>" value="<?= htmlspecialchars($value) ?>">
                         <div class="preview-container">
                             <?php if ($value): ?>
-                                <img src="../content/<?= $value ?>" class="preview-img">
+                                <img src="../<?= $value ?>" class="preview-img">
                             <?php else: ?>
                                 <img src="" class="preview-img" style="display:none">
                             <?php endif; ?>

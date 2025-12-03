@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once 'functions.php';
 $preview = isset($_GET['preview']);
 $file = $preview ? "content/draft.json" : "content/data.json";
 $data = json_decode(file_get_contents($file), true);

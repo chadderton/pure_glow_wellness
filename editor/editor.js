@@ -73,7 +73,7 @@ document.querySelectorAll('.image-upload').forEach(input => {
                 const container = input.closest('.image-upload-container');
                 const img = container.querySelector('.preview-img');
                 if (img) {
-                    img.src = "../content/" + path;
+                    img.src = "../" + path;
                     img.style.display = 'block';
                 }
             } else {

@@ -12,8 +12,36 @@
     <meta property="og:title" content="<?= htmlspecialchars($data['settings']['site_title'] ?? 'Pure Glow Wellness') ?>">
     <meta property="og:description" content="<?= htmlspecialchars($data['settings']['meta_description'] ?? '') ?>">
     <?php if (!empty($data['settings']['og_image'])): ?>
-    <meta property="og:image" content="content/<?= htmlspecialchars($data['settings']['og_image']) ?>">
+    <meta property="og:image" content="<?= htmlspecialchars($data['settings']['og_image']) ?>">
     <?php endif; ?>
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://www.mthstaging.co.uk/pureglow/">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Pure Glow Wellness",
+      "image": "https://www.mthstaging.co.uk/pureglow/assets/images/brand/text_logo.svg",
+      "description": "<?= htmlspecialchars($data['settings']['meta_description'] ?? '') ?>",
+      "url": "https://www.mthstaging.co.uk/pureglow/",
+      "telephone": "<?= htmlspecialchars($data['contact']['phone'] ?? '') ?>",
+      "email": "<?= htmlspecialchars($data['contact']['email'] ?? '') ?>",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Marple",
+        "addressRegion": "Stockport",
+        "addressCountry": "UK"
+      },
+      "priceRange": "££"
+    }
+    </script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +52,9 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="index.php" class="header-logo-link">Pure Glow Wellness</a>
+                <a href="index.php" class="header-logo-link">
+                    <img src="assets/images/brand/text_logo.svg" alt="Pure Glow Wellness">
+                </a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                 <span class="bar"></span>

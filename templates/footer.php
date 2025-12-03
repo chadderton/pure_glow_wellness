@@ -15,6 +15,8 @@
             </div>
             <?php endif; ?>
             <p>&copy; <?= date('Y') ?> Pure Glow Wellness. All rights reserved.</p>
+            <p>Website by <a href="https://www.marpletech.co.uk" target="_blank" rel="noopener noreferrer">Marple Tech Help</a></p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
     </footer>
     <script src="assets/js/main.js"></script>

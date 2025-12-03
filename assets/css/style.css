@@ -1,15 +1,22 @@
-/* 1. Reset & Variables */
+/* ----------------------------------------------
+   1. Reset & Variables
+----------------------------------------------- */
 :root {
     --pgw-primary: #9A5B48;      /* warm brown */
-    --pgw-accent: #C1A59B;       /* soft beige/taupe */
+    --pgw-accent: #C1A59B;       /* soft taupe */
     --pgw-cream: #FFF9F5;        /* warm off-white */
-    --pgw-blush: #D8A89F;        /* blush neutral */
-    --pgw-dark: #5A443C;         /* deep warm brown */
-    --pgw-text: #4A3C36;         /* readable body text */
-    
+    --pgw-blush: #D8A89F;        /* muted blush */
+    --pgw-dark: #5A443C;         /* deep brown */
+    --pgw-text: #4A3C36;         /* body text */
+
     --font-script: 'Great Vibes', cursive;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
+
+    --radius-soft: 8px;
+    --radius-round: 50px;
+    --shadow-soft: 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-card: 0 6px 25px rgba(0,0,0,0.08);
 }
 
 * {
@@ -18,35 +25,34 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
     color: var(--pgw-text);
     background-color: var(--pgw-cream);
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 img {
     max-width: 100%;
-    height: auto;
     display: block;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
 
-/* 2. Typography */
+
+/* ----------------------------------------------
+   2. Typography
+----------------------------------------------- */
 h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--pgw-dark);
@@ -54,14 +60,15 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     position: relative;
     padding-bottom: 1rem;
 }
@@ -72,45 +79,50 @@ h2::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 70px;
     height: 2px;
     background-color: var(--pgw-accent);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--pgw-primary);
 }
 
 p {
     margin-bottom: 1rem;
+    font-size: 1.05rem;
 }
 
-/* 3. Global Layout */
+
+/* ----------------------------------------------
+   3. Layout
+----------------------------------------------- */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    width: min(90%, 1200px);
+    margin-inline: auto;
 }
 
 section {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
+
+/* Buttons */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.9rem 1.7rem;
+    border-radius: var(--radius-round);
     font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
     border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .btn-primary {
     background-color: var(--pgw-primary);
     color: #fff;
+    box-shadow: var(--shadow-soft);
 }
 
 .btn-primary:hover {
@@ -118,9 +130,9 @@ section {
 }
 
 .btn-secondary {
-    background-color: transparent;
     border-color: var(--pgw-primary);
     color: var(--pgw-primary);
+    background: transparent;
 }
 
 .btn-secondary:hover {
@@ -128,35 +140,27 @@ section {
     color: #fff;
 }
 
-/* 4. Header & Nav */
+
+/* ----------------------------------------------
+   4. Header
+----------------------------------------------- */
 .site-header {
     background-color: var(--pgw-cream);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo a {
-    display: block;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.logo a.visible {
-    opacity: 1;
+    justify-content: space-between;
 }
 
 .logo img {
-    height: 50px;
-    width: auto;
+    height: 52px;
 }
 
 .main-nav ul {
@@ -167,12 +171,15 @@ section {
 .main-nav a {
     font-weight: 500;
     color: var(--pgw-dark);
+    font-size: 1rem;
 }
 
 .main-nav a:hover {
     color: var(--pgw-primary);
 }
 
+
+/* Mobile Menu */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -183,65 +190,75 @@ section {
 }
 
 .bar {
-    width: 25px;
+    width: 26px;
     height: 3px;
     background-color: var(--pgw-dark);
-    transition: 0.3s;
 }
 
-/* 5. Hero Section */
-.hero {
+
+/* ----------------------------------------------
+   5. Hero
+----------------------------------------------- */
+.hero-section {
     position: relative;
-    height: 80vh;
-    min-height: 500px;
+    height: 82vh;
+    min-height: 520px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    overflow: hidden;
+    align-items: center;
     padding: 0;
+    text-align: center;
 }
 
-.hero-bg {
+.hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-img {
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.6;
+    object-fit: cover;
+    opacity: 0.55;
+    filter: brightness(0.9);
 }
 
 .hero-content {
-    padding: 3rem;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 780px;
+    padding: 2.5rem;
 }
 
-.hero-content h1 {
-    margin-bottom: 1.5rem;
+.hero-logo {
+    max-width: 450px;
+    margin-bottom: 1.3rem;
 }
 
-/* 6. About Section */
-.about-grid {
+.subheading {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin-bottom: 2rem;
+    color: var(--pgw-dark);
+}
+
+
+/* ----------------------------------------------
+   6. About
+----------------------------------------------- */
+.about-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
 }
 
 .about-image img {
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-card);
 }
 
 .about-text h2 {
     text-align: left;
-    margin-bottom: 1.5rem;
 }
 
 .about-text h2::after {
@@ -249,96 +266,174 @@ section {
     transform: none;
 }
 
-/* 7. Treatments Section */
-.treatments {
+.callout-panel {
     background-color: #fff;
+    padding: 1.5rem;
+    border-left: 4px solid var(--pgw-accent);
+    border-radius: var(--radius-soft);
+    font-style: italic;
+    margin-top: 2rem;
+    box-shadow: var(--shadow-soft);
 }
 
-.treatments-content {
-    text-align: center;
+.journey-container {
+    margin-top: 3.5rem;
     max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Pricing Section */
-.pricing {
-    background-color: var(--pgw-cream);
-    padding: 4rem 0;
-}
-
-.pricing-info {
-    background-color: #fff;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     text-align: center;
+}
+
+
+/* ----------------------------------------------
+   7. Services
+----------------------------------------------- */
+.services-section .services-intro {
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+.treatment-card {
+    background-color: #fff;
+    border-radius: var(--radius-soft);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s ease;
+}
+
+.treatment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+}
+
+.treatment-img {
+    height: 220px;
+    overflow: hidden;
+}
+
+.treatment-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment-info {
+    text-align: center;
+    padding: 1.7rem;
+}
+
+
+/* ----------------------------------------------
+   8. Reviews
+----------------------------------------------- */
+.testimonials-section {
+    background-color: var(--pgw-cream);
+}
+
+.testimonials-intro {
+    text-align: center;
+    font-style: italic;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    color: var(--pgw-primary);
+    font-size: 1.2rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--radius-soft);
+    border: 1px solid var(--pgw-accent);
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ----------------------------------------------
+   9. Contact
+----------------------------------------------- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+}
+
+.contact-form-wrapper {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-card);
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+    border-radius: var(--radius-soft);
     border: 1px solid var(--pgw-accent);
 }
 
-/* 8. Benefits Section */
-.benefits {
-    background-color: var(--pgw-cream);
-}
 
-.benefits-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.benefits-list li {
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* 9. Testimonials Section */
-.testimonials {
-    background-color: #fff;
-}
-
-/* 10. Contact Section */
-.contact {
-    background-color: var(--pgw-cream);
-}
-
-.contact-details {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.contact-details p {
-    margin-bottom: 0.5rem;
-}
-
-.contact-details a {
-    color: var(--pgw-primary);
-    font-weight: 500;
-}
-
-/* 11. Footer */
+/* ----------------------------------------------
+   10. Footer
+----------------------------------------------- */
 .site-footer {
     background-color: var(--pgw-dark);
     color: var(--pgw-cream);
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     text-align: center;
-    font-size: 0.9rem;
 }
 
-/* 12. Responsive Media Queries */
+.site-footer a {
+    color: var(--pgw-blush);
+}
+
+
+/* ----------------------------------------------
+   11. Fade-in Animations
+----------------------------------------------- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ----------------------------------------------
+   12. Mobile Responsiveness
+----------------------------------------------- */
+@media (max-width: 900px) {
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.75rem;
-    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.85rem; }
 
     .mobile-menu-toggle {
         display: flex;
@@ -349,10 +444,10 @@ section {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--pgw-cream);
+        background: var(--pgw-cream);
         padding: 1rem 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        display: none; /* Hidden by default on mobile */
+        display: none;
+        box-shadow: var(--shadow-soft);
     }
 
     .main-nav.active {
@@ -361,65 +456,60 @@ section {
 
     .main-nav ul {
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        text-align: center;
     }
 
     .hero-content {
         padding: 2rem 1rem;
-        width: 90%;
     }
+
+    .treatment-img { height: 180px; }
 }
 
-/* 13. Animations */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    will-change: opacity, visibility;
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    margin-top: 3rem;
 }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
+.benefit-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
 }
 
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+.benefit-item:hover {
+    transform: translateY(-5px);
 }
 
-.social-links a {
-    color: var(--pgw-cream);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    position: relative;
+.benefit-icon {
+    height: 60px;
+    width: auto;
+    margin: 0 auto 1.5rem;
 }
 
-.social-links a::after {
-    content: '';
+.benefit-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: var(--pgw-dark);
+}
+
+
+/* Utility: Visually Hidden (for accessibility/honeypots) */
+.visually-hidden {
     position: absolute;
-    width: 0;
+    width: 1px;
     height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--pgw-blush);
-    transition: width 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--pgw-blush);
-}
-
-.social-links a:hover::after {
-    width: 100%;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
