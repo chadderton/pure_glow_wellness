@@ -1,0 +1,21 @@
+{
+  "name": "Pure Glow Wellness",
+  "short_name": "Pure Glow",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#9A5B48",
+  "background_color": "#FFF9F5",
+  "display": "standalone"
+}

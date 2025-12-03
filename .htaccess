@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# serve preview mode
+RewriteCond %{QUERY_STRING} preview=1
+RewriteRule ^$ index.php [L]
+
+# secure content folder
+RewriteRule ^content/ - [F]
+RewriteRule ^api/ - [F]
+
+# allow editor access
+RewriteRule ^editor - [L]

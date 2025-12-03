@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "site_title": "Pure Glow Wellness | Holistic Facials in Marple",
+    "meta_description": "Experience relaxing, holistic facials tailored to your skin and wellbeing at Pure Glow Wellness in Marple.",
+    "og_image": ""
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "threads": ""
+  },
+  "hero": {
+    "headline": "Relaxing Facials in Marple",
+    "subheading": "Holistic facials tailored to your skin and wellbeing.",
+    "hero_image": "uploads/images/hero.jpg"
+  },
+  "about": {
+    "title": "Meet Caroline",
+    "body": "Hi, I’m Caroline…",
+    "portrait": "uploads/images/caroline.jpg"
+  },
+  "treatments": {
+    "title": "Our Treatments",
+    "description": "We offer a range of treatments..."
+  },
+  "benefits": {
+    "title": "Why Choose Us?",
+    "list": "Relaxation\nGlowing Skin\nNatural Products"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "info": "Contact us for pricing details."
+  },
+  "testimonials": {
+    "title": "What our clients say"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "caroline@pureglowwellness.com",
+    "phone": "01234 567890"
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "append_css",
+			"type": "shell",
+			"command": "echo \"/* 13. Animations */\n.fade-in-section {\n    opacity: 0;\n    transform: translateY(20px);\n    transition: opacity 0.6s ease-out, transform 0.6s ease-out;\n    will-change: opacity, visibility;\n}\n\n.fade-in-section.is-visible {\n    opacity: 1;\n    transform: none;\n}\" >> css/style.css"
+		}
+	]
+}
