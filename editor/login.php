@@ -2,11 +2,16 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Default password is: PureGlow2025!
-    // Generated with: password_hash('PureGlow2025!', PASSWORD_DEFAULT)
-    $password_hash = '$2y$10$1eJR0heVs1fo9NpJvIAqXOXptUfw67zYdmG0z/LEBz8ZypufRIgX6'; 
+    // Load password hash from .env
+    $envPath = __DIR__ . '/../.env';
+    $password_hash = '';
     
-    if (password_verify($_POST['password'], $password_hash)) {
+    if (file_exists($envPath)) {
+        $env = parse_ini_file($envPath);
+        $password_hash = $env['EDITOR_PASS_HASH'] ?? '';
+    }
+    
+    if ($password_hash && password_verify($_POST['password'], $password_hash)) {
         $_SESSION['loggedin'] = true;
         header("Location: index.php");
         exit;

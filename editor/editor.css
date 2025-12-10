@@ -63,18 +63,56 @@ body {
 
 .editor-section {
     background: white;
-    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
 
-.editor-section h2 {
-    margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+summary {
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+summary:hover {
+    background: #f9f9f9;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1.2rem;
     color: #444;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: #888;
+    font-weight: bold;
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details[open] summary {
+    border-bottom: 1px solid #eee;
+}
+
+.section-content {
+    padding: 2rem;
 }
 
 .form-group {

@@ -3,9 +3,20 @@
     "settings": {
       "title": "Site Settings (SEO)",
       "fields": {
-        "site_title": { "type": "text", "label": "Site Title (Browser Tab)" },
-        "meta_description": { "type": "textarea", "label": "Meta Description (Google)" },
-        "og_image": { "type": "image", "label": "Social Share Image" }
+        "site_title": { "type": "text", "label": "Site Title (Browser Tab)", "help": "Appears in the browser tab and Google search results." },
+        "meta_description": { "type": "textarea", "label": "Meta Description (Google)", "help": "A short summary (150-160 chars) shown in search results." },
+        "og_image": { "type": "image", "label": "Social Share Image", "help": "Image shown when sharing the site on Facebook/WhatsApp. Recommended: 1200x630px." }
+      }
+    },
+    "design": {
+      "title": "Design & Colors",
+      "fields": {
+        "primary": { "type": "color", "label": "Primary Color (Warm Brown)", "help": "Used for headings and main accents." },
+        "accent": { "type": "color", "label": "Accent Color (Soft Taupe)", "help": "Used for secondary elements." },
+        "cream": { "type": "color", "label": "Background Cream", "help": "Main background color." },
+        "blush": { "type": "color", "label": "Blush (Highlights)", "help": "Subtle highlight color." },
+        "dark": { "type": "color", "label": "Dark (Footer/Buttons)", "help": "Used for footer background and primary buttons." },
+        "text": { "type": "color", "label": "Body Text Color", "help": "Main text color for readability." }
       }
     },
     "social": {
@@ -22,19 +33,18 @@
       "fields": {
         "headline": { "type": "text", "label": "Headline" },
         "subheading": { "type": "textarea", "label": "Subheading" },
-        "hero_image": { "type": "image", "label": "Background Image" },
-        "hero_image_alt": { "type": "text", "label": "Background Image Alt Text" }
+        "hero_image": { "type": "image", "label": "Background Image", "help": "Large high-quality image. Recommended: 1920x1080px." },
+        "hero_image_alt": { "type": "text", "label": "Background Image Alt Text", "help": "Description for accessibility." }
       }
     },
     "about": {
       "title": "About Section",
       "fields": {
         "title": { "type": "text", "label": "Heading" },
-        "body": { "type": "textarea", "label": "Main Body Text" },
-        "quote": { "type": "textarea", "label": "Callout Quote" },
-        "journey_title": { "type": "text", "label": "Journey Heading" },
-        "journey_body": { "type": "textarea", "label": "Journey Text" },
-        "portrait": { "type": "image", "label": "Portrait Image" },
+        "home_summary": { "type": "textarea", "label": "Home Page Summary", "help": "Short version for the front page." },
+        "full_bio": { "type": "textarea", "label": "Full Biography", "help": "Full text for the About Me page." },
+        "closing_line": { "type": "text", "label": "Closing Line" },
+        "portrait": { "type": "image", "label": "Portrait Image", "help": "Recommended: 600x800px portrait." },
         "portrait_alt": { "type": "text", "label": "Portrait Image Alt Text" }
       }
     },
@@ -42,7 +52,30 @@
       "title": "Treatments Section",
       "fields": {
         "title": { "type": "text", "label": "Heading" },
-        "description": { "type": "textarea", "label": "Description" }
+        "intro": { "type": "textarea", "label": "Intro Text" },
+        "pricing_line": { "type": "textarea", "label": "Pricing Line" },
+        "intro_offer_text": { "type": "text", "label": "Intro Offer Text" },
+        "intro_offer_cta": { "type": "text", "label": "Intro Offer Button Label" },
+        "treatment_1_title": { "type": "text", "label": "Treatment 1 Title" },
+        "treatment_1_desc": { "type": "textarea", "label": "Treatment 1 Description" },
+        "treatment_1_duration": { "type": "text", "label": "Treatment 1 Duration" },
+        "treatment_1_price": { "type": "text", "label": "Treatment 1 Price" },
+        "treatment_1_image": { "type": "image", "label": "Treatment 1 Image" },
+        "treatment_2_title": { "type": "text", "label": "Treatment 2 Title" },
+        "treatment_2_desc": { "type": "textarea", "label": "Treatment 2 Description" },
+        "treatment_2_duration": { "type": "text", "label": "Treatment 2 Duration" },
+        "treatment_2_price": { "type": "text", "label": "Treatment 2 Price" },
+        "treatment_2_image": { "type": "image", "label": "Treatment 2 Image" },
+        "treatment_3_title": { "type": "text", "label": "Treatment 3 Title" },
+        "treatment_3_desc": { "type": "textarea", "label": "Treatment 3 Description" },
+        "treatment_3_duration": { "type": "text", "label": "Treatment 3 Duration" },
+        "treatment_3_price": { "type": "text", "label": "Treatment 3 Price" },
+        "treatment_3_image": { "type": "image", "label": "Treatment 3 Image" },
+        "treatment_4_title": { "type": "text", "label": "Treatment 4 Title" },
+        "treatment_4_desc": { "type": "textarea", "label": "Treatment 4 Description" },
+        "treatment_4_duration": { "type": "text", "label": "Treatment 4 Duration" },
+        "treatment_4_price": { "type": "text", "label": "Treatment 4 Price" },
+        "treatment_4_image": { "type": "image", "label": "Treatment 4 Image" }
       }
     },
     "strands": {

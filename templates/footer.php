@@ -16,7 +16,7 @@
                 </a>
             </div>
             <p><?= htmlspecialchars($data['footer']['microcopy'] ?? 'Pure Glow Wellness • Marple, Stockport') ?></p>
-            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+            <p><a href="privacy-policy.php">Privacy Policy</a></p>
             <p class="designer-credit">Website designed by <a href="https://www.marpletech.co.uk" target="_blank" rel="noopener noreferrer">Marple Tech Help</a></p>
         </div>
     </footer>

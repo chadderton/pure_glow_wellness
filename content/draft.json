@@ -2,7 +2,15 @@
   "settings": {
     "site_title": "Pure Glow Wellness | Facials & Holistic Wellbeing in Marple",
     "meta_description": "Facials & holistic wellbeing in Marple. Calm, tailored treatments in a peaceful private studio.",
-    "og_image": ""
+    "og_image": "assets/images/og-home-1200x630.jpg"
+  },
+  "design": {
+    "primary": "#9A5B48",
+    "accent": "#C1A59B",
+    "cream": "#FFF9F5",
+    "blush": "#D8A89F",
+    "dark": "#5A443C",
+    "text": "#4A3C36"
   },
   "social": {
     "facebook": "https://facebook.com",
@@ -23,7 +31,7 @@
   },
   "about": {
     "title": "My story",
-    "body": "Hi, I’m Caroline. After years working in insurance and finance, I decided it was time to do something that felt meaningful, not just “a job”. I retrained in facials and holistic wellbeing because I love the way a calm space and the right treatment can change how you feel.\n\nEverything I do is gentle, thoughtful, and tailored. Some people come purely for relaxation. Others want support as their skin changes with stress, hormones, or life events. Whatever has brought you here, you’ll be welcomed, listened to, and never rushed.\n\nPure Glow Wellness is my umbrella for three strands: facials (open now), corporate wellbeing, and PT for women navigating midlife and menopause (coming later as I complete my training).",
+    "body": "Hi, I’m Caroline. After years working in insurance and finance, I decided it was time to do something that felt meaningful, not just “a job”. I retrained in facials and holistic wellbeing because I love the way a calm space and the right treatment can change how you feel.\n\nEverything I do is gentle, thoughtful, and tailored. Some people come purely for relaxation. Others want support as their skin changes with stress, hormones, or life events. I also offer supportive, comfort-first treatments for clients navigating recovery after cancer treatment. Whatever has brought you here, you’ll be welcomed, listened to, and never rushed.\n\nPure Glow Wellness is my umbrella for three strands: facials (open now), corporate wellbeing, and PT for women navigating midlife and menopause (coming later as I complete my training).",
     "closing_line": "If you’re not sure what you need yet, just message me. I’ll help you choose what’s right.",
     "portrait": "assets/images/about/about_caroline.webp",
     "portrait_alt": "Caroline Hines"
@@ -52,6 +60,29 @@
   "treatments": {
     "title": "Treatments",
     "intro": "No two faces (or weeks) are the same, so everything I offer is tailored.",
+    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. For now, message me and I’ll confirm the current introductory pricing.",
+    "intro_offer_text": "Introductory appointments available — enquire for options",
+    "intro_offer_cta": "Message on Messenger",
+    "treatment_1_title": "Bespoke Facial",
+    "treatment_1_duration": "60 minutes (approx.)",
+    "treatment_1_desc": "A calming facial customised to your skin on the day. Ideal if you want relaxation, glow, and a treatment that feels personal, not routine.",
+    "treatment_1_image": "assets/images/services/facial.webp",
+    "treatment_1_price": "",
+    "treatment_2_title": "Express Skin Reset",
+    "treatment_2_duration": "30 minutes (approx.)",
+    "treatment_2_desc": "A focused treatment to refresh tired skin and leave you feeling more like yourself. Perfect if you’re short on time but need a boost.",
+    "treatment_2_image": "assets/images/services/skincare.webp",
+    "treatment_2_price": "",
+    "treatment_3_title": "Indian Head Massage",
+    "treatment_3_duration": "30–45 minutes (approx.)",
+    "treatment_3_desc": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Perfect during stressful seasons.",
+    "treatment_3_image": "assets/images/services/indian_head_massage.webp",
+    "treatment_3_price": "",
+    "treatment_4_title": "Natural Skincare Support",
+    "treatment_4_duration": "Message me to arrange",
+    "treatment_4_desc": "If your skin is changing and you’re not sure where to start, I can help you build a simple, sensible routine with gentle product guidance.",
+    "treatment_4_image": "assets/images/services/natural_skincare_support.webp",
+    "treatment_4_price": "",
     "list": [
       {
         "title": "Bespoke Facial",
@@ -78,7 +109,9 @@
         "image": "assets/images/services/natural_skincare_support.webp"
       }
     ],
-    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. If you’d like a recommendation or a quote, just message me."
+    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. For now, message me and I’ll confirm the current introductory pricing.",
+    "intro_offer_text": "Introductory appointments available — enquire for options",
+    "intro_offer_cta": "Message on Messenger"
   },
   "contact": {
     "title": "Get in touch",

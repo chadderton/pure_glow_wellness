@@ -86,3 +86,22 @@ document.querySelectorAll('.image-upload').forEach(input => {
         }
     });
 });
+
+// Character counter for textareas
+document.querySelectorAll('textarea').forEach(input => {
+    const counter = document.createElement('div');
+    counter.className = 'char-counter';
+    counter.style.fontSize = '0.8rem';
+    counter.style.color = '#888';
+    counter.style.marginTop = '4px';
+    counter.style.textAlign = 'right';
+    input.parentNode.appendChild(counter);
+
+    const updateCounter = () => {
+        counter.textContent = \\ characters\;
+    };
+    
+    input.addEventListener('input', updateCounter);
+    updateCounter();
+});
+

@@ -16,7 +16,9 @@
             <h2><?= htmlspecialchars($data['about']['title'] ?? '') ?></h2>
             <div class="body-text">
                 <?php 
-                $paragraphs = explode("\n\n", $data['about']['body'] ?? '');
+                // Use home_summary if available, otherwise fallback to body (legacy)
+                $summaryText = $data['about']['home_summary'] ?? ($data['about']['body'] ?? '');
+                $paragraphs = explode("\n\n", $summaryText);
                 foreach ($paragraphs as $p): 
                     if (trim($p)):
                 ?>
@@ -27,11 +29,9 @@
                 ?>
             </div>
 
-            <?php if (!empty($data['about']['closing_line'])): ?>
-            <div class="about-closing">
-                <p><strong><?= htmlspecialchars($data['about']['closing_line']) ?></strong></p>
+            <div class="about-actions" style="margin-top: 1.5rem;">
+                <a href="about.php" class="btn btn-secondary">Read my full story</a>
             </div>
-            <?php endif; ?>
         </div>
     </div>
 </section>

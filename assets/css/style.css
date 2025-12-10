@@ -292,7 +292,7 @@ button:focus-visible {
     .about-image img {
         max-height: clamp(22rem, 55vh, 32rem);
         object-fit: cover;
-        object-position: center;
+        object-position: top center;
     }
 }
 
@@ -303,6 +303,48 @@ button:focus-visible {
 .about-text h2::after {
     left: 0;
     transform: none;
+}
+
+/* About Page (Full Bio) */
+.about-page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.about-header {
+    text-align: center;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.about-image-full {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.about-image-full img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+    }
+    
+    .about-image-full {
+        margin: 0;
+        position: sticky;
+        top: 100px;
+    }
 }
 
 .callout-panel {

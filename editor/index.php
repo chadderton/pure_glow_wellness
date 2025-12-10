@@ -29,12 +29,18 @@ $draft = json_decode(file_get_contents("../content/draft.json"), true);
     <form id="editorForm">
 
     <?php foreach ($schema['sections'] as $key => $section): ?>
-    <section class="editor-section">
-        <h2><?= $section['title'] ?></h2>
-
+    <details class="editor-section" open>
+        <summary><h2><?= $section['title'] ?></h2></summary>
+        
+        <div class="section-content">
         <?php foreach ($section['fields'] as $fieldKey => $field): ?>
             <div class="form-group">
-                <label><?= $field['label'] ?></label>
+                <label>
+                    <?= $field['label'] ?>
+                    <?php if (isset($field['help'])): ?>
+                        <br><small style="color: #666; font-weight: normal;"><?= $field['help'] ?></small>
+                    <?php endif; ?>
+                </label>
 
                 <?php
                 $value = $draft[$key][$fieldKey] ?? "";
@@ -45,6 +51,12 @@ $draft = json_decode(file_get_contents("../content/draft.json"), true);
 
                 <?php elseif ($field['type'] === 'textarea'): ?>
                     <textarea name="<?= $key ?>__<?= $fieldKey ?>" rows="5"><?= htmlspecialchars($value) ?></textarea>
+
+                <?php elseif ($field['type'] === 'color'): ?>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <input type="color" name="<?= $key ?>__<?= $fieldKey ?>" value="<?= htmlspecialchars($value) ?>" style="height: 50px; width: 100px; padding: 0; border: none; cursor: pointer;">
+                        <span style="font-family: monospace;"><?= htmlspecialchars($value) ?></span>
+                    </div>
 
                 <?php elseif ($field['type'] === 'image'): ?>
                     <div class="image-upload-container">
@@ -61,7 +73,8 @@ $draft = json_decode(file_get_contents("../content/draft.json"), true);
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
-    </section>
+        </div>
+    </details>
     <?php endforeach; ?>
 
     </form>
