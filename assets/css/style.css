@@ -118,12 +118,17 @@ section {
 
 /* Buttons */
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 0.9rem 1.7rem;
     border-radius: var(--radius-round);
     font-weight: 500;
     border: 1px solid transparent;
     cursor: pointer;
     transition: 0.3s ease;
+    line-height: 1.2;
 }
 
 .btn:focus-visible,

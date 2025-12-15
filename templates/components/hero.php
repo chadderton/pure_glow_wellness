@@ -19,8 +19,10 @@
         </div>
 
         <div class="hero-buttons">
-            <a href="#contact"
-                class="btn btn-primary"><?= htmlspecialchars($data['hero']['primary_cta'] ?? 'Enquire now') ?></a>
+            <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" target="_blank" class="btn btn-primary">
+                <img src="assets/images/socials/messenger_icon_white.svg" alt="" width="20" height="20">
+                <?= htmlspecialchars($data['hero']['primary_cta'] ?? 'Enquire now') ?>
+            </a>
             <a href="mailto:<?= htmlspecialchars($data['contact']['email'] ?? '') ?>" class="btn btn-secondary"
                 target="_blank"><?= htmlspecialchars($data['hero']['secondary_cta'] ?? 'Email me') ?></a>
         </div>

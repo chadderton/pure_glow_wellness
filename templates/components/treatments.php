@@ -18,11 +18,11 @@
             <?php if (!empty($data['treatments']['intro_offer_text'])): ?>
                 <div class="intro-offer-block" style="margin-top: 2rem;">
                     <p style="margin-bottom: 0.75rem; font-weight: 600; color: var(--pgw-primary); font-size: 1.1rem;">
-                        <?= htmlspecialchars($data['treatments']['intro_offer_text']) ?></p>
+                        <?= htmlspecialchars($data['treatments']['intro_offer_text']) ?>
+                    </p>
                     <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" class="btn btn-primary" target="_blank"
-                        rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <img src="assets/images/socials/messenger_icon_white.svg" alt="" width="20" height="20"
-                            style="width: 1.25rem; height: 1.25rem;">
+                        rel="noopener noreferrer">
+                        <img src="assets/images/socials/messenger_icon_white.svg" alt="" width="20" height="20">
                         <?= htmlspecialchars($data['treatments']['intro_offer_cta'] ?? 'Message on Messenger') ?>
                     </a>
                 </div>
@@ -62,11 +62,12 @@
                         <div class="treatment-info">
                             <h3><?= htmlspecialchars($tTitle) ?></h3>
                             <p class="duration"><?= htmlspecialchars($tDuration) ?>
-                                <?= $tPrice ? ' | ' . htmlspecialchars($tPrice) : '' ?></p>
+                                <?= $tPrice ? ' | ' . htmlspecialchars($tPrice) : '' ?>
+                            </p>
                             <p><?= nl2br(htmlspecialchars($tDesc)) ?></p>
                         </div>
                     </div>
-                <?php
+                    <?php
                 endfor;
             else:
                 // Fallback to old list format

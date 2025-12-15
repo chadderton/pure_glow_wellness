@@ -19,20 +19,20 @@
     "messenger": "https://m.me"
   },
   "hero": {
-    "headline": "Relaxing Facials and Calming Skin Treatments in Marple",
-    "lead_line": "Facials & holistic wellbeing in Marple. Gentle, tailored treatments in a peaceful private studio.",
-    "intro": "I created Pure Glow Wellness to help people feel comfortable in their own skin. I offer facials, natural skincare support, and wellbeing treatments, with more to come as I continue my training.",
-    "primary_cta": "Enquire now",
+    "headline": "Relaxing skin and wellbeing treatments in Marple",
+    "lead_line": "Gentle, tailored facials, massage, and holistic wellbeing treatments in a calm, private studio.",
+    "intro": "I created Pure Glow Wellness to help people feel comfortable in their own skin.\n\nI offer tailored facials, relaxation-focused wellbeing treatments, and natural skincare support — all delivered in a calm, unrushed way, with time to talk and treatments adapted to you on the day.",
+    "primary_cta": "Message me on Facebook",
     "secondary_cta": "Email me",
-    "showpiece_line": "A calm, private space. Perfect if you’re overwhelmed, burnt out, or just need an hour that’s really yours.",
+    "showpiece_line": "A calm, private space — ideal if you’re overwhelmed, burnt out, or simply need time that’s truly yours.",
     "mini_trust_line": "Marple, Stockport • Appointments by arrangement • Friendly, unrushed sessions",
     "hero_image": "assets/images/hero/hero_image.webp",
     "hero_image_alt": "Peaceful wellness atmosphere"
   },
   "about": {
     "title": "My story",
-    "home_summary": "Hello, I’m Caroline. I’m 51, married to my Aussie husband Mic, a proud mum of three gorgeous children, and dog mum to two lively pups. I’ve been a Marpler since the age of seven, and today I’m living out a dream I never expected: running my own holistic skin and wellbeing retreat from my garden.\n\nMy working life began in the beauty industry as a hairdresser before I moved into finance and insurance. In 2021, everything changed when I was diagnosed with breast cancer. After successful treatment, I knew I wanted to do something more meaningful, something that helped people.\n\nIf you’d like to read more about how Pure Glow Wellness began, you can find my full story below.",
-    "full_bio": "Hello, I’m Caroline. I’m 51, married to my Aussie husband Mic, a proud mum of three gorgeous children, and dog mum to two lively pups. I’ve been a Marpler since the age of seven (with a few wonderful years living in Australia along the way), and today I’m living out a dream I never expected: running my own holistic skin and wellbeing retreat from my garden.\n\nMy working life began in the beauty industry as a hairdresser, before I moved into finance and insurance. In 2021, everything changed when I was diagnosed with breast cancer. After successful treatment, I was given the opportunity to pause, reflect, and re-evaluate what truly mattered to me. I knew then that I wanted to do something more meaningful, something that helped people.\n\nI discovered Tropic Skincare completely by accident, and it became a turning point in my life. I fell in love with the incredible results, but even more so with the ethics behind the brand: green, cruelty-free, and made without harsh chemicals. After seeing such positive changes in my own skin, I became a Tropic Ambassador, a role I’m deeply passionate about.\n\nMy journey didn’t stop there. Wanting to extend my offering and care for others in a deeper way, I trained in facials and Indian head massage, took a leap of faith, left my job, and opened my own treatment room, The Retreat. Tucked away in the corner of my garden, surrounded by trees and wildlife, it is a calm, private, and nurturing space designed for you to truly switch off.\n\nI specialise in customer-focused, results-driven facials, where we take time to chat, understand your skin, your lifestyle, and your concerns, so every treatment is completely tailored to you. My aim is for every client to leave feeling relaxed, cared for, and confident in their skin.\n\nAlongside my business, I’m also a proud volunteer with Breast Cancer Now, supporting women who are currently facing diagnosis and treatment, a cause that will always be close to my heart.\n\nEverything I do is rooted in care, connection, and integrity. Whether you visit me for skincare, relaxation, or support, my goal is simple: to offer you a safe space to rest, reset, and feel truly looked after.",
+    "home_summary": "Hello, I’m Caroline. I’m 51, married to my Aussie husband Mic, a proud mum of three gorgeous children, and dog mum to two lively pups. I’ve been a Marpler since the age of seven, and today I’m living out a dream I never expected: running my own holistic skin and wellbeing retreat from my garden.\n\nMy working life began in the beauty industry as a hairdresser before I moved into finance and insurance. In 2021, everything changed when I was diagnosed with breast cancer. After successful treatment, I knew I wanted to do something more meaningful — something that helped people feel supported, relaxed, and cared for.\n\nIf you’d like to read more about how Pure Glow Wellness began, you can find my full story below.",
+    "full_bio": "Hello, I’m Caroline. I’m 51, married to my Aussie husband Mic, a proud mum of three gorgeous children, and dog mum to two lively pups. I’ve been a Marpler since the age of seven (with a few wonderful years living in Australia along the way), and today I’m living out a dream I never expected: running my own holistic skin and wellbeing retreat from my garden.\n\nMy working life began in the beauty industry as a hairdresser, before I moved into finance and insurance. In 2021, everything changed when I was diagnosed with breast cancer. After successful treatment, I was given the opportunity to pause, reflect, and re-evaluate what truly mattered to me. I knew then that I wanted to do something more meaningful — something that helped people feel supported, relaxed, and cared for.\n\nI discovered Tropic Skincare completely by accident, and it became a turning point in my life. I fell in love with the incredible results, but even more so with the ethics behind the brand: green, cruelty-free, and made without harsh chemicals. After seeing such positive changes in my own skin, I became a Tropic Ambassador, a role I’m deeply passionate about.\n\nMy journey didn’t stop there. Wanting to extend my offering and care for others in a deeper way, I trained in facials and Indian head massage, took a leap of faith, left my job, and opened my own treatment room, The Retreat. Tucked away in the corner of my garden, surrounded by trees and wildlife, it is a calm, private, and nurturing space designed for you to truly switch off.\n\nI specialise in customer-focused, results-driven facials, where we take time to chat, understand your skin, your lifestyle, and your concerns, so every treatment is completely tailored to you. My aim is for every client to leave feeling relaxed, cared for, and confident in their skin.\n\nAlongside my business, I’m also a proud volunteer with Breast Cancer Now, supporting women who are currently facing diagnosis and treatment, a cause that will always be close to my heart.\n\nEverything I do is rooted in care, connection, and integrity. Whether you visit me for skincare, relaxation, or support, my goal is simple: to offer you a safe space to rest, reset, and feel truly looked after.",
     "closing_line": "If you are not sure what you need yet, just message me. I will help you choose what feels right for you.",
     "portrait": "assets/images/about/about_caroline.webp",
     "portrait_alt": "Caroline Hines"
@@ -41,79 +41,79 @@
     "title": "One umbrella, three strands",
     "cards": [
       {
-        "title": "Pure Glow Facials (open now)",
-        "copy": "Relaxing, skin-supporting facials tailored to your needs on the day. Calm, holistic, and never routine.",
+        "title": "Pure Glow Facials",
+        "copy": "Relaxing, skin-supporting facials tailored to your needs on the day. Each treatment begins with a conversation about what you want from it, followed by carefully chosen products and techniques to suit your skin. Calm, holistic, and never routine.",
         "icon": "assets/images/icons/icon-relax.svg"
       },
       {
         "title": "Pure Glow Corporate",
-        "copy": "Wellbeing sessions for workplaces, designed to help people reset, de-stress, and feel looked after during busy periods.",
+        "copy": "Wellbeing sessions for workplaces, offering moments of calm and care during busy or high-pressure periods. Ideal for events, seasonal peaks, or supporting teams in a more personal, human way.",
         "icon": "assets/images/icons/icon-bespoke.svg"
       },
       {
-        "title": "Pure Glow PT (coming later)",
-        "copy": "Strength and confidence-focused training for women, especially around midlife and menopause. I’m currently training and I’ll share details here when I’m ready.",
-        "icon": "assets/images/icons/icon-therapist.svg"
+        "title": "Pure Glow PT",
+        "copy": "Strength- and confidence-focused personal training for women, with a particular focus on midlife, menopause, and building resilience gently and sustainably. Sessions are approached with care, not intensity, and always tailored to the individual.",
+        "icon": "assets/images/icons/icon-studio.svg"
       }
     ],
-    "note": "Right now, facials are my focus. The other strands are being built carefully, not rushed."
+    "note": "Wellbeing sits at the heart of everything I offer at Pure Glow — calm, considered care that supports how you feel, not just how you look."
   },
   "treatments": {
     "title": "Treatments",
-    "intro": "No two faces (or weeks) are the same, so everything I offer is tailored.",
-    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. For now, message me and I’ll confirm the current introductory pricing.",
+    "intro": "No two faces — or weeks — are the same. Everything I offer is adapted to you on the day.",
+    "pricing_line": "I’ll be sharing a full treatment menu soon. For now, you’re very welcome to message me and I’ll help you choose the best option and confirm current introductory availability.",
     "intro_offer_text": "Introductory appointments available — enquire for options",
-    "intro_offer_cta": "Message on Messenger",
+    "intro_offer_cta": "Message me on Facebook",
     "treatment_1_title": "Bespoke Facial",
     "treatment_1_duration": "60 minutes (approx.)",
-    "treatment_1_desc": "A calming facial customised to your skin on the day. Ideal if you want relaxation, glow, and a treatment that feels personal, not routine.",
+    "treatment_1_desc": "A calming facial customised to your skin and how you’re feeling on the day. Ideal if you want deep relaxation, visible glow, and a treatment that feels genuinely personal from start to finish.",
     "treatment_1_image": "assets/images/services/facial.webp",
     "treatment_1_price": "",
     "treatment_2_title": "Express Skin Reset",
     "treatment_2_duration": "30 minutes (approx.)",
-    "treatment_2_desc": "A focused treatment to refresh tired skin and leave you feeling more like yourself. Perfect if you’re short on time but need a boost.",
+    "treatment_2_desc": "A focused treatment to refresh tired skin and help you feel more like yourself. Perfect if you’re short on time but still want visible results and proper care.",
     "treatment_2_image": "assets/images/services/skincare.webp",
     "treatment_2_price": "",
     "treatment_3_title": "Indian Head Massage",
     "treatment_3_duration": "30–45 minutes (approx.)",
-    "treatment_3_desc": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Perfect during stressful seasons.",
+    "treatment_3_desc": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Particularly helpful during stressful seasons or when you’re carrying tension.",
     "treatment_3_image": "assets/images/services/indian_head_massage.webp",
     "treatment_3_price": "",
     "treatment_4_title": "Natural Skincare Support",
-    "treatment_4_duration": "Message me to arrange",
-    "treatment_4_desc": "If your skin is changing and you’re not sure where to start, I can help you build a simple, sensible routine with gentle product guidance.",
+    "treatment_4_duration": "By arrangement",
+    "treatment_4_desc": "If your skin is changing and you’re not sure where to start, I can help you build a simple, realistic routine with gentle product guidance — no overwhelm, just sensible support.",
     "treatment_4_image": "assets/images/services/natural_skincare_support.webp",
     "treatment_4_price": "",
     "list": [
       {
         "title": "Bespoke Facial",
         "duration": "60 minutes (approx.)",
-        "description": "A calming facial customised to your skin on the day. Ideal if you want relaxation, glow, and a treatment that feels personal, not routine.",
+        "description": "A calming facial customised to your skin and how you’re feeling on the day. Ideal if you want deep relaxation, visible glow, and a treatment that feels genuinely personal from start to finish.",
         "image": "assets/images/services/facial.webp"
       },
       {
         "title": "Express Skin Reset",
         "duration": "30 minutes (approx.)",
-        "description": "A focused treatment to refresh tired skin and leave you feeling more like yourself. Perfect if you’re short on time but need a boost.",
+        "description": "A focused treatment to refresh tired skin and help you feel more like yourself. Perfect if you’re short on time but still want visible results and proper care.",
         "image": "assets/images/services/skincare.webp"
       },
       {
         "title": "Indian Head Massage",
         "duration": "30–45 minutes (approx.)",
-        "description": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Perfect during stressful seasons.",
+        "description": "Deeply relaxing head, neck, and shoulder work to melt tension and calm the nervous system. Particularly helpful during stressful seasons or when you’re carrying tension.",
         "image": "assets/images/services/indian_head_massage.webp"
       },
       {
         "title": "Natural Skincare Support",
-        "duration": "Message me to arrange",
-        "description": "If your skin is changing and you’re not sure where to start, I can help you build a simple, sensible routine with gentle product guidance.",
+        "duration": "By arrangement",
+        "description": "If your skin is changing and you’re not sure where to start, I can help you build a simple, realistic routine with gentle product guidance — no overwhelm, just sensible support.",
         "image": "assets/images/services/natural_skincare_support.webp"
       }
     ]
   },
   "contact": {
     "title": "Get in touch",
-    "intro": "I don’t use online booking at the moment because my availability can vary while I’m still building the business. The easiest way to start is to send me a message with:",
+    "intro": "I don’t use online booking at the moment, as I like to keep appointments flexible and tailored to each person. The easiest way to start is to send me a message with:",
     "instructions": [
       "what you’re interested in (facial / head massage / not sure yet)",
       "any skin concerns or goals (only if you’d like to share)",
@@ -127,7 +127,7 @@
   },
   "retreat": {
     "title": "The Retreat — your calm, private space",
-    "description": "A warm, nurturing room tucked away in Caroline’s garden — designed for you to truly switch off.",
+    "description": "A warm, nurturing room tucked away in my garden — designed for you to truly switch off.",
     "quote": "“Her treatment room feels like a secret hideaway.” — Jenni",
     "image": "assets/images/retreat/retreatimage.webp",
     "image_alt": "The Retreat, Caroline’s calm private treatment room in Marple"
