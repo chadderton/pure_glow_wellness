@@ -4,6 +4,11 @@ RewriteEngine On
 RewriteCond %{QUERY_STRING} preview=1
 RewriteRule ^$ index.php [L]
 
+# Clean URLs: Internally rewrite extensionless URL to .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
 # secure content folder (prevent direct access to json/txt)
 RewriteRule ^content/.*\.(json|txt)$ - [F]
 
@@ -46,3 +51,11 @@ Options -Indexes
   ExpiresByType image/x-icon "access plus 1 year"
   ExpiresDefault "access plus 2 days"
 </IfModule>
+
+# GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Custom Error Pages
+ErrorDocument 404 /404.php

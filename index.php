@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start(); // Not needed for public site (cookie-free)
 require_once 'functions.php';
 
 $preview = isset($_GET['preview']);

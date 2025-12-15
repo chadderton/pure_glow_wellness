@@ -109,10 +109,7 @@
         "description": "If your skin is changing and you’re not sure where to start, I can help you build a simple, sensible routine with gentle product guidance.",
         "image": "assets/images/services/natural_skincare_support.webp"
       }
-    ],
-    "pricing_line": "I’ll publish my full price list once my launch treatment menu is finalised. For now, message me and I’ll confirm the current introductory pricing.",
-    "intro_offer_text": "Introductory appointments available — enquire for options",
-    "intro_offer_cta": "Message on Messenger"
+    ]
   },
   "contact": {
     "title": "Get in touch",
@@ -128,16 +125,50 @@
     "button_text": "Send message",
     "success_message": "Thanks. Your message has been sent. I’ll get back to you as soon as I can with availability and a recommendation."
   },
+  "retreat": {
+    "title": "The Retreat — your calm, private space",
+    "description": "A warm, nurturing room tucked away in Caroline’s garden — designed for you to truly switch off.",
+    "quote": "“Her treatment room feels like a secret hideaway.” — Jenni",
+    "image": "assets/images/retreat/retreatimage.webp",
+    "image_alt": "The Retreat, Caroline’s calm private treatment room in Marple"
+  },
   "testimonials": {
-    "title": "Client feedback",
-    "review_1_text": "Placeholder review — Caroline to provide real review text here.",
-    "review_1_author": "Reviewer name",
-    "review_2_text": "Placeholder review — add client feedback from free facials.",
-    "review_2_author": "Reviewer name",
-    "review_3_text": "Placeholder review — Caroline to provide photos or quotes.",
-    "review_3_author": "Reviewer name"
+    "title": "What clients say",
+    "review_1_text": "I had the pleasure of relaxing in Caroline’s warm and cosy beauty room for my facial. After talking through what would happen, I just laid back and felt the stress I didn’t even realise I was holding melt away. I left feeling relaxed, refreshed and re-energised.",
+    "review_1_author": "Gaynor",
+    "review_2_text": "I had a facial with Caz a few days ago and it was amazing. She explained what each product would do at every stage, and the treatment felt luxurious but purposeful. I left with glowing skin and I’ll definitely be back.",
+    "review_2_author": "Catherine",
+    "review_3_text": "I’ve had many facials over the years, but this is probably the best. Caz’s treatment room feels like a secret hideaway and the whole experience was incredibly relaxing and professional.",
+    "review_3_author": "Jenni",
+    "read_more_text": "Read more client reviews →",
+    "read_more_url": "reviews"
+  },
+  "reviews_page": [
+    {
+      "author": "Gaynor",
+      "text": "I had the pleasure of relaxing in Caroline’s warm and cosy beauty room for my facial. After explaining what would happen, agreeing what I wanted from it and which products would be used, I just laid back and felt the stress I didn’t even realise I was holding leave me. I could honestly have stayed there all day. I came out feeling relaxed, refreshed and re-energised. I would definitely recommend going to see Caroline."
+    },
+    {
+      "author": "Catherine",
+      "text": "I had a facial with Caz a few days ago and it was amazing. I was so relaxed from the minute I entered the cabin with its lovely setting. It’s winter now, but I can imagine how gorgeous it will be in summer.\n\nCaz used a range of products and explained what each one would do to my skin at every stage. The treatment felt very luxurious, but also like it was genuinely nourishing my skin. The pressure was just right and I left with glowing skin. I’ll definitely be back soon. Thank you."
+    },
+    {
+      "author": "Jenni",
+      "text": "I had an amazing facial and shoulder massage with Caz. Her technique is very relaxing and professional. I’ve had many facials over the years, but this is probably the best. Her treatment room feels like a secret hideaway and is incredibly tranquil. I’m really looking forward to my next visit."
+    },
+    {
+      "author": "Jo",
+      "text": "Caroline is absolutely fantastic. She is extremely knowledgeable about skincare, makeup and the products she uses. I had a wonderful facial which was so relaxing, and my skin felt amazing afterwards. I would recommend Caroline to anyone looking for high-quality skincare, guidance, advice and support."
+    }
+  ],
+  "quotes": {
+    "book_cta": "“Probably the best facial I’ve had.” — Jenni",
+    "treatments": "“I left with glowing skin.” — Catherine",
+    "contact": "“Warm, cosy, and incredibly relaxing.” — Gaynor",
+    "about_retreat": "“A secret hideaway.” — Jenni",
+    "hero": "“I could honestly have stayed there all day.” — Gaynor"
   },
   "footer": {
-      "microcopy": "Pure Glow Wellness • Marple, Stockport"
+    "microcopy": "Pure Glow Wellness • Marple, Stockport"
   }
 }
