@@ -13,7 +13,7 @@ $PGW_MESSENGER_URL = $data['social']['messenger'] ?? "https://m.me";
 
 // Page-specific SEO
 $pageTitle = "About Caroline | " . ($data['settings']['site_title'] ?? 'Pure Glow Wellness');
-$pageDescription = "Meet Caroline, the founder of Pure Glow Wellness in Marple. Read her story from breast cancer survivor to holistic therapist.";
+$pageDescription = "Meet Caroline, the founder of Pure Glow Wellness in Marple. Read her story from breast cancer survivor to skin and wellbeing therapist.";
 ?>
 
 <?php include "templates/header.php"; ?>

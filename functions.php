@@ -1,24 +1,31 @@
 <?php
 
-function get_image_variants($filePath) {
-    // $filePath is like "assets/images/hero/hero.jpg"
+function get_image_variants($filePath)
+{
+    // $filePath is like "assets/images/hero/hero.jpg" OR "assets/images/retreat/retreatimage-1024w.webp"
     $info = pathinfo($filePath);
     $dir = $info['dirname'];
-    $name = $info['filename'];
+
+    // Strip existing width suffix if present (e.g. name-1024w -> name)
+    $name = preg_replace('/-\d+w$/', '', $info['filename']);
     $ext = $info['extension'];
 
-    return [
-        'small' => "{$dir}/{$name}-480w.{$ext}",
-        'medium' => "{$dir}/{$name}-800w.{$ext}",
-        'large' => "{$dir}/{$name}-1200w.{$ext}",
-        'xlarge' => "{$dir}/{$name}-1600w.{$ext}"
-    ];
+    // Define all potential sizes
+    $sizes = ['480', '512', '640', '768', '800', '960', '1024', '1080', '1200', '1280', '1600'];
+
+    $variants = [];
+    foreach ($sizes as $size) {
+        $variants[$size] = "{$dir}/{$name}-{$size}w.{$ext}";
+    }
+
+    return $variants;
 }
 
-function get_srcset($filePath) {
+function get_srcset($filePath)
+{
     $variants = get_image_variants($filePath);
     $srcset = [];
-    
+
     // Check if original file exists relative to document root
     if (file_exists($filePath)) {
         // We assume the original is the largest available quality (e.g. 1920w or original upload)
@@ -28,34 +35,33 @@ function get_srcset($filePath) {
         // For now, let's just include the generated variants which are guaranteed to exist and have known widths.
     }
 
-    if (file_exists($variants['xlarge'])) {
-        $srcset[] = "{$variants['xlarge']} 1600w";
+    // Sort variants by size descending for check, but srcset usually prefers ascending (unimportant for functional srcset string)
+    krsort($variants);
+
+    foreach ($variants as $width => $path) {
+        if (file_exists($path)) {
+            $srcset[] = "{$path} {$width}w";
+        }
     }
-    if (file_exists($variants['large'])) {
-        $srcset[] = "{$variants['large']} 1200w";
-    }
-    if (file_exists($variants['medium'])) {
-        $srcset[] = "{$variants['medium']} 800w";
-    }
-    if (file_exists($variants['small'])) {
-        $srcset[] = "{$variants['small']} 480w";
-    }
-    
+
     // If no variants exist, return empty string (browser uses src)
-    if (empty($srcset)) return '';
+    if (empty($srcset))
+        return '';
 
     return implode(", ", $srcset);
 }
 
-function resize_image_file($sourcePath, $targetPath, $maxWidth) {
-    if (!file_exists($sourcePath)) return false;
+function resize_image_file($sourcePath, $targetPath, $maxWidth)
+{
+    if (!file_exists($sourcePath))
+        return false;
 
     list($w, $h, $type) = getimagesize($sourcePath);
-    
+
     // If original is smaller than target, just copy it (or skip)
     if ($w <= $maxWidth) {
         // Optional: copy($sourcePath, $targetPath);
-        return true; 
+        return true;
     }
 
     $ratio = $maxWidth / $w;
@@ -64,22 +70,28 @@ function resize_image_file($sourcePath, $targetPath, $maxWidth) {
 
     $src = null;
     switch ($type) {
-        case IMAGETYPE_JPEG: 
-            if (function_exists('imagecreatefromjpeg')) $src = imagecreatefromjpeg($sourcePath); 
+        case IMAGETYPE_JPEG:
+            if (function_exists('imagecreatefromjpeg'))
+                $src = imagecreatefromjpeg($sourcePath);
             break;
-        case IMAGETYPE_PNG: 
-            if (function_exists('imagecreatefrompng')) $src = imagecreatefrompng($sourcePath); 
+        case IMAGETYPE_PNG:
+            if (function_exists('imagecreatefrompng'))
+                $src = imagecreatefrompng($sourcePath);
             break;
-        case IMAGETYPE_GIF: 
-            if (function_exists('imagecreatefromgif')) $src = imagecreatefromgif($sourcePath); 
+        case IMAGETYPE_GIF:
+            if (function_exists('imagecreatefromgif'))
+                $src = imagecreatefromgif($sourcePath);
             break;
-        case IMAGETYPE_WEBP: 
-            if (function_exists('imagecreatefromwebp')) $src = imagecreatefromwebp($sourcePath); 
+        case IMAGETYPE_WEBP:
+            if (function_exists('imagecreatefromwebp'))
+                $src = imagecreatefromwebp($sourcePath);
             break;
-        default: return false;
+        default:
+            return false;
     }
 
-    if (!$src) return false;
+    if (!$src)
+        return false;
 
     $dst = imagecreatetruecolor($newW, $newH);
 
@@ -93,10 +105,18 @@ function resize_image_file($sourcePath, $targetPath, $maxWidth) {
     imagecopyresampled($dst, $src, 0, 0, 0, 0, $newW, $newH, $w, $h);
 
     switch ($type) {
-        case IMAGETYPE_JPEG: imagejpeg($dst, $targetPath, 80); break;
-        case IMAGETYPE_PNG: imagepng($dst, $targetPath); break;
-        case IMAGETYPE_GIF: imagegif($dst, $targetPath); break;
-        case IMAGETYPE_WEBP: imagewebp($dst, $targetPath, 80); break;
+        case IMAGETYPE_JPEG:
+            imagejpeg($dst, $targetPath, 80);
+            break;
+        case IMAGETYPE_PNG:
+            imagepng($dst, $targetPath);
+            break;
+        case IMAGETYPE_GIF:
+            imagegif($dst, $targetPath);
+            break;
+        case IMAGETYPE_WEBP:
+            imagewebp($dst, $targetPath, 80);
+            break;
     }
 
     imagedestroy($src);

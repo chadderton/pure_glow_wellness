@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: 
 
-# Sitemap: https://pureglowwellness.com/sitemap.xml
+# Sitemap: https://www.pureglowvibes.co.uk/sitemap.xml

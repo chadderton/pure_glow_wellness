@@ -4,7 +4,7 @@
             <h2><?= htmlspecialchars($data['contact']['title'] ?? '') ?></h2>
             <div class="contact-body">
                 <?php if (!empty($data['contact']['intro'])): ?>
-                    <p><?= htmlspecialchars($data['contact']['intro']) ?></p>
+                    <p><?= nl2br(htmlspecialchars($data['contact']['intro'])) ?></p>
                 <?php endif; ?>
 
                 <?php if (!empty($data['contact']['instructions'])): ?>
@@ -16,7 +16,12 @@
                 <?php endif; ?>
 
                 <?php if (!empty($data['contact']['outro'])): ?>
-                    <p><?= htmlspecialchars($data['contact']['outro']) ?></p>
+                    <p><?= nl2br(htmlspecialchars($data['contact']['outro'])) ?></p>
+                <?php endif; ?>
+
+                <?php if (!empty($data['contact']['reassurance'])): ?>
+                    <p class="mt-4" style="margin-top: 1.5em; font-style: italic;">
+                        <?= htmlspecialchars($data['contact']['reassurance']) ?></p>
                 <?php endif; ?>
 
                 <?php if (empty($data['contact']['intro']) && !empty($data['contact']['body'])): ?>

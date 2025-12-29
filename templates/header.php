@@ -16,21 +16,36 @@
     <meta property="og:description"
         content="<?= htmlspecialchars($pageDescription ?? $data['settings']['meta_description'] ?? '') ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.mthstaging.co.uk/pureglow/">
+    <?php
+    // Dynamic Canonical & OG URL Generation
+    $prodBase = "https://www.pureglowvibes.co.uk";
+    $reqPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $pathSlug = basename($reqPath);
+
+    // If root/index or just the folder name, treat as home
+    if ($pathSlug == 'pureglow' || $pathSlug == '' || $pathSlug == 'index.php') {
+        $currentCanonical = $prodBase . '/';
+    } else {
+        $currentCanonical = $prodBase . '/' . $pathSlug;
+    }
+    ?>
+    <meta property="og:url" content="<?= htmlspecialchars($currentCanonical) ?>">
 
     <?php
     $og_image_path = $data['settings']['og_image'] ?? 'assets/images/hero/hero_image-1200w.webp';
-    // Ensure we have a full URL for OG tags
+    // Use current host for the functional image URL to avoid breaking during staging
+    $currentScheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
+    $currentHost = $_SERVER['HTTP_HOST'];
     $og_image_url = strpos($og_image_path, 'http') === 0
         ? $og_image_path
-        : 'https://www.mthstaging.co.uk/pureglow/' . ltrim($og_image_path, '/');
+        : $currentScheme . '://' . $currentHost . '/' . ltrim($og_image_path, '/');
     ?>
     <meta property="og:image" content="<?= htmlspecialchars($og_image_url) ?>">
     <meta property="og:image:alt" content="Pure Glow Wellness in Marple">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Canonical & Favicon -->
-    <link rel="canonical" href="https://www.mthstaging.co.uk/pureglow/">
+    <link rel="canonical" href="<?= htmlspecialchars($currentCanonical) ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
