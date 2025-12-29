@@ -5,8 +5,7 @@
             <p><?= nl2br(htmlspecialchars($data['treatments']['intro'] ?? '')) ?></p>
 
             <?php if (!empty($data['quotes']['treatments'])): ?>
-                <p class="section-quote"
-                    style="font-style: italic; color: var(--pgw-primary); margin-top: 0.5rem; font-weight: 500;">
+                <p class="section-quote">
                     <?= htmlspecialchars($data['quotes']['treatments']) ?>
                 </p>
             <?php endif; ?>
@@ -16,8 +15,8 @@
             <?php endif; ?>
 
             <?php if (!empty($data['treatments']['intro_offer_text'])): ?>
-                <div class="intro-offer-block" style="margin-top: 2rem;">
-                    <p style="margin-bottom: 0.75rem; font-weight: 600; color: var(--pgw-primary); font-size: 1.1rem;">
+                <div class="intro-offer-block">
+                    <p class="intro-offer-text">
                         <?= htmlspecialchars($data['treatments']['intro_offer_text']) ?>
                     </p>
                     <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" class="btn btn-primary" target="_blank"
@@ -50,6 +49,8 @@
                     $tDuration = $data['treatments']["treatment_{$i}_duration"] ?? '';
                     $tPrice = $data['treatments']["treatment_{$i}_price"] ?? '';
                     $tImage = $data['treatments']["treatment_{$i}_image"] ?? '';
+                    $tBenefitsTitle = $data['treatments']["treatment_{$i}_benefits_title"] ?? '';
+                    $tBenefits = $data['treatments']["treatment_{$i}_benefits"] ?? [];
                     ?>
                     <div class="treatment-card fade-in-section">
                         <?php if ($tImage): ?>
@@ -65,6 +66,18 @@
                                 <?= $tPrice ? ' | ' . htmlspecialchars($tPrice) : '' ?>
                             </p>
                             <p><?= nl2br(htmlspecialchars($tDesc)) ?></p>
+                            <?php if (!empty($tBenefits)): ?>
+                                <div class="benefits-container">
+                                    <?php if ($tBenefitsTitle): ?>
+                                        <p class="benefits-title"><?= htmlspecialchars($tBenefitsTitle) ?></p>
+                                    <?php endif; ?>
+                                    <ul class="benefits-list">
+                                        <?php foreach ($tBenefits as $benefit): ?>
+                                            <li><?= htmlspecialchars($benefit) ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <?php
@@ -84,6 +97,18 @@
                             <h3><?= htmlspecialchars($treatment['title']) ?></h3>
                             <p class="duration"><?= htmlspecialchars($treatment['duration']) ?></p>
                             <p><?= nl2br(htmlspecialchars($treatment['description'])) ?></p>
+                            <?php if (!empty($treatment['benefits'])): ?>
+                                <div class="benefits-container">
+                                    <?php if (!empty($treatment['benefits_title'])): ?>
+                                        <p class="benefits-title"><?= htmlspecialchars($treatment['benefits_title']) ?></p>
+                                    <?php endif; ?>
+                                    <ul class="benefits-list">
+                                        <?php foreach ($treatment['benefits'] as $benefit): ?>
+                                            <li><?= htmlspecialchars($benefit) ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; endif; ?>

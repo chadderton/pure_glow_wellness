@@ -14,8 +14,7 @@
                     <?php endif; ?>
                     <h3><?= htmlspecialchars($card['title']) ?></h3>
                     <?php if (!empty($card['subtitle'])): ?>
-                        <p class="strand-subtitle"
-                            style="font-style: italic; color: var(--pgw-primary); margin-bottom: 0.5rem; font-weight: 500;">
+                        <p class="strand-subtitle">
                             <?= htmlspecialchars($card['subtitle']) ?>
                         </p>
                     <?php endif; ?>

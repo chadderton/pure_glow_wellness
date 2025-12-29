@@ -16,9 +16,9 @@
         </div>
 
         <?php if (!empty($data['testimonials']['read_more_text'])): ?>
-            <div class="testimonials-footer" style="text-align: center; margin-top: 2rem;">
-                <a href="<?= htmlspecialchars($data['testimonials']['read_more_url'] ?? 'reviews.php') ?>" class="text-link"
-                    style="color: var(--pgw-primary); text-decoration: none; font-weight: 600; border-bottom: 1px solid currentColor;">
+            <div class="testimonials-footer">
+                <a href="<?= htmlspecialchars($data['testimonials']['read_more_url'] ?? 'reviews.php') ?>"
+                    class="text-link-premium">
                     <?= htmlspecialchars($data['testimonials']['read_more_text']) ?>
                 </a>
             </div>

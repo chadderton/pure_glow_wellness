@@ -82,10 +82,18 @@
     "treatment_3_image": "assets/images/services/indian3-1024w.webp",
     "treatment_3_price": "£35",
     "treatment_4_title": "Face Sculpt & Buccal Release",
-    "treatment_4_duration": "TBC",
-    "treatment_4_desc": "A restorative facial designed to relieve stress, support nervous system regulation and release tension held in the face and jaw.\n\nThis deeply calming treatment combines gentle lymphatic drainage, facial sculpting and intraoral (buccal) massage to ease physical and emotional tension often associated with high workloads, screen use and chronic stress.\n\nBy working with the lymphatic and nervous systems, this facial helps reduce facial tightness, jaw clenching and mental fatigue, leaving the client feeling grounded, refreshed and visibly relaxed.\n\nWellness Benefits:\n\nRelieves jaw tension and stress-related holding\nSupports lymphatic flow and natural detoxification\nEncourages nervous system down-regulation\nReduces facial fatigue from screen use and posture\nPromotes deep relaxation, clarity and wellbeing",
+    "treatment_4_duration": "Coming February 2026",
+    "treatment_4_desc": "A restorative facial designed to relieve stress, support nervous system regulation and release tension held in the face and jaw.\n\nThis deeply calming treatment combines gentle lymphatic drainage, facial sculpting and intraoral (buccal) massage to ease physical and emotional tension often associated with high workloads, screen use and chronic stress.\n\nBy working with the lymphatic and nervous systems, this facial helps reduce facial tightness, jaw clenching and mental fatigue, leaving the client feeling grounded, refreshed and visibly relaxed.",
+    "treatment_4_benefits_title": "Wellness Benefits:",
+    "treatment_4_benefits": [
+      "Relieves jaw tension and stress-related holding",
+      "Supports lymphatic flow and natural detoxification",
+      "Encourages nervous system down-regulation",
+      "Reduces facial fatigue from screen use and posture",
+      "Promotes deep relaxation, clarity and wellbeing"
+    ],
     "treatment_4_image": "assets/images/services/facesculpt-1024w.webp",
-    "treatment_4_price": "TBC",
+    "treatment_4_price": "",
     "list": [
       {
         "title": "Luxury Prescriptive Facial",
@@ -107,8 +115,16 @@
       },
       {
         "title": "Face Sculpt & Buccal Release",
-        "duration": "TBC",
-        "description": "A restorative facial designed to relieve stress, support nervous system regulation and release tension held in the face and jaw.\n\nThis deeply calming treatment combines gentle lymphatic drainage, facial sculpting and intraoral (buccal) massage to ease physical and emotional tension often associated with high workloads, screen use and chronic stress.\n\nBy working with the lymphatic and nervous systems, this facial helps reduce facial tightness, jaw clenching and mental fatigue, leaving the client feeling grounded, refreshed and visibly relaxed.\n\nWellness Benefits:\n\nRelieves jaw tension and stress-related holding\nSupports lymphatic flow and natural detoxification\nEncourages nervous system down-regulation\nReduces facial fatigue from screen use and posture\nPromotes deep relaxation, clarity and wellbeing",
+        "duration": "Coming February 2026",
+        "description": "A restorative facial designed to relieve stress, support nervous system regulation and release tension held in the face and jaw.\n\nThis deeply calming treatment combines gentle lymphatic drainage, facial sculpting and intraoral (buccal) massage to ease physical and emotional tension often associated with high workloads, screen use and chronic stress.\n\nBy working with the lymphatic and nervous systems, this facial helps reduce facial tightness, jaw clenching and mental fatigue, leaving the client feeling grounded, refreshed and visibly relaxed.",
+        "benefits_title": "Wellness Benefits:",
+        "benefits": [
+          "Relieves jaw tension and stress-related holding",
+          "Supports lymphatic flow and natural detoxification",
+          "Encourages nervous system down-regulation",
+          "Reduces facial fatigue from screen use and posture",
+          "Promotes deep relaxation, clarity and wellbeing"
+        ],
         "image": "assets/images/services/facesculpt.webp"
       }
     ]

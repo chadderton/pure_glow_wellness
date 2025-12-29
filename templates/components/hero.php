@@ -28,8 +28,7 @@
         </div>
 
         <?php if (!empty($data['hero']['cta_quote'])): ?>
-            <p class="hero-quote"
-                style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-style: italic; color: var(--pgw-primary); font-weight: 500;">
+            <p class="hero-quote">
                 <?= htmlspecialchars($data['hero']['cta_quote']) ?>
             </p>
         <?php endif; ?>

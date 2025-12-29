@@ -20,8 +20,9 @@
                 <?php endif; ?>
 
                 <?php if (!empty($data['contact']['reassurance'])): ?>
-                    <p class="mt-4" style="margin-top: 1.5em; font-style: italic;">
-                        <?= htmlspecialchars($data['contact']['reassurance']) ?></p>
+                    <p class="reassurance-text">
+                        <?= htmlspecialchars($data['contact']['reassurance']) ?>
+                    </p>
                 <?php endif; ?>
 
                 <?php if (empty($data['contact']['intro']) && !empty($data['contact']['body'])): ?>
@@ -44,13 +45,12 @@
 
         <div class="contact-form-wrapper">
             <?php if (!empty($data['quotes']['contact'])): ?>
-                <p class="section-quote"
-                    style="text-align: center; font-style: italic; color: var(--pgw-primary); margin-bottom: 2rem; font-weight: 500;">
+                <p class="section-quote text-center">
                     <?= htmlspecialchars($data['quotes']['contact']) ?>
                 </p>
             <?php endif; ?>
 
-            <div id="form-message" style="display:none; padding: 1rem; margin-bottom: 1rem; border-radius: 4px;"></div>
+            <div id="form-message" class="form-message"></div>
 
             <form id="contactForm" action="api/contact.php" method="POST" class="contact-form">
                 <!-- Spam Protection: Honeypot & Timestamp -->
@@ -93,7 +93,7 @@
 
         // Reset message
         msgDiv.style.display = 'none';
-        msgDiv.className = '';
+        msgDiv.classList.remove('form-message-success', 'form-message-error');
 
         // Disable button
         btn.disabled = true;
@@ -111,8 +111,7 @@
             if (response.ok && result.ok) {
                 // Success
                 msgDiv.innerText = "Thank you! Your message has been sent.";
-                msgDiv.style.backgroundColor = "#d4edda";
-                msgDiv.style.color = "#155724";
+                msgDiv.classList.add('form-message-success');
                 msgDiv.style.display = "block";
                 form.reset();
             } else {
@@ -122,8 +121,7 @@
         } catch (error) {
             // Network or other error
             msgDiv.innerText = error.message;
-            msgDiv.style.backgroundColor = "#f8d7da";
-            msgDiv.style.color = "#721c24";
+            msgDiv.classList.add('form-message-error');
             msgDiv.style.display = "block";
         } finally {
             btn.disabled = false;
