@@ -1,8 +1,17 @@
 RewriteEngine On
 
+# Set Environment to Production
+<IfModule mod_env.c>
+    SetEnv APP_ENV prod
+</IfModule>
+
 # serve preview mode
 RewriteCond %{QUERY_STRING} preview=1
 RewriteRule ^$ index.php [L]
+
+# Force non-www (apex domain)
+RewriteCond %{HTTP_HOST} ^www\.pureglowvibes\.co\.uk [NC]
+RewriteRule ^(.*)$ https://pureglowvibes.co.uk/$1 [L,R=301]
 
 # Clean URLs: Internally rewrite extensionless URL to .php
 RewriteCond %{REQUEST_FILENAME} !-d

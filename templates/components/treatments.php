@@ -19,8 +19,8 @@
                     <p class="intro-offer-text">
                         <?= htmlspecialchars($data['treatments']['intro_offer_text']) ?>
                     </p>
-                    <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" class="btn btn-primary" target="_blank"
-                        rel="noopener noreferrer">
+                    <a href="<?= htmlspecialchars($data['social']['messenger'] ?? '') ?>" class="btn btn-primary"
+                        target="_blank" rel="noopener noreferrer">
                         <img src="assets/images/socials/messenger_icon_white.svg" alt="" width="20" height="20">
                         <?= htmlspecialchars($data['treatments']['intro_offer_cta'] ?? 'Message on Messenger') ?>
                     </a>

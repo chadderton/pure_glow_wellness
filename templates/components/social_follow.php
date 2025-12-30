@@ -5,21 +5,21 @@
     </p>
 
     <div class="social-buttons">
-      <a class="social-btn social-btn--messenger" href="<?php echo htmlspecialchars($PGW_MESSENGER_URL); ?>"
+      <a class="social-btn social-btn--messenger" href="<?= htmlspecialchars($data['social']['messenger'] ?? '') ?>"
         target="_blank" rel="noopener noreferrer">
         <img src="assets/images/socials/messenger_icon_white.svg" alt="" aria-hidden="true" class="social-icon"
           width="20" height="20">
         Message me on Facebook
       </a>
 
-      <a class="social-btn social-btn--instagram" href="<?php echo htmlspecialchars($PGW_INSTAGRAM_URL); ?>"
+      <a class="social-btn social-btn--instagram" href="<?= htmlspecialchars($data['social']['instagram'] ?? '') ?>"
         target="_blank" rel="noopener noreferrer">
         <img src="assets/images/socials/instagram_icon_white.svg" alt="" aria-hidden="true" class="social-icon"
           width="20" height="20">
         Follow on Instagram
       </a>
 
-      <a class="social-btn social-btn--facebook" href="<?php echo htmlspecialchars($PGW_FACEBOOK_PAGE_URL); ?>"
+      <a class="social-btn social-btn--facebook" href="<?= htmlspecialchars($data['social']['facebook'] ?? '') ?>"
         target="_blank" rel="noopener noreferrer">
         <img src="assets/images/socials/facebook_icon_white.svg" alt="" aria-hidden="true" class="social-icon"
           width="20" height="20">

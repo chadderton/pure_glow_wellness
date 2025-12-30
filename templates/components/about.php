@@ -7,7 +7,7 @@
                 ?>
                 <img src="<?= htmlspecialchars($portraitImg) ?>" srcset="<?= htmlspecialchars($portraitSrcset) ?>"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    alt="<?= htmlspecialchars($data['about']['portrait_alt'] ?? 'Caroline') ?>">
+                    alt="<?= htmlspecialchars($data['about']['portrait_alt'] ?? 'Caroline') ?>" loading="lazy">
             <?php endif; ?>
         </div>
 
@@ -22,7 +22,7 @@
                     if (trim($p)):
                         ?>
                         <p><?= nl2br(htmlspecialchars(trim($p))) ?></p>
-                    <?php
+                        <?php
                     endif;
                 endforeach;
                 ?>

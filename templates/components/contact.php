@@ -37,8 +37,8 @@
                         href="mailto:<?= htmlspecialchars($data['contact']['email'] ?? '') ?>"><?= htmlspecialchars($data['contact']['email'] ?? '') ?></a>
                 </p>
                 <p class="contact-prefer">
-                    Prefer messaging? <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" target="_blank"
-                        rel="noopener noreferrer">Message me on Facebook</a>.
+                    Prefer messaging? <a href="<?= htmlspecialchars($data['social']['messenger'] ?? '') ?>"
+                        target="_blank" rel="noopener noreferrer">Message me on Facebook</a>.
                 </p>
             </div>
         </div>

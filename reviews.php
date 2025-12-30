@@ -1,17 +1,9 @@
 <?php
-// session_start();
-require_once 'functions.php';
-
-$preview = isset($_GET['preview']);
-$file = $preview ? "content/draft.json" : "content/data.json";
-$data = json_decode(file_get_contents($file), true);
-
-// Page-specific SEO
-$pageTitle = "Client Reviews | " . ($data['settings']['site_title'] ?? 'Pure Glow Wellness');
+require_once __DIR__ . '/config/bootstrap.php';
+$pageTitle = "Client Reviews | " . ($site['settings']['site_title'] ?? 'Pure Glow Wellness');
 $pageDescription = "Read what clients say about their experiences at Pure Glow Wellness in Marple.";
+require PARTIALS . '/layout-top.php';
 ?>
-
-<?php include "templates/header.php"; ?>
 
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
@@ -26,13 +18,13 @@ $pageDescription = "Read what clients say about their experiences at Pure Glow W
         <div class="reviews-page-header">
             <h1>Client Reviews</h1>
             <p>
-                <?= htmlspecialchars($data['testimonials']['title'] ?? 'Kind words from my clients') ?>
+                <?= htmlspecialchars($site['testimonials']['title'] ?? 'Kind words from my clients') ?>
             </p>
         </div>
 
         <div class="reviews-list">
             <?php
-            $reviews = $data['reviews_page'] ?? [];
+            $reviews = $site['reviews_page'] ?? [];
             foreach ($reviews as $review):
                 if (empty($review['text']))
                     continue;
@@ -55,4 +47,4 @@ $pageDescription = "Read what clients say about their experiences at Pure Glow W
     </div>
 </section>
 
-<?php include "templates/footer.php"; ?>
+<?php require PARTIALS . '/layout-bottom.php'; ?>

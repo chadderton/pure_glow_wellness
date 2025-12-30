@@ -6,7 +6,7 @@
         ?>
         <img src="<?= htmlspecialchars($heroImg) ?>" srcset="<?= htmlspecialchars($heroSrcset) ?>" sizes="100vw"
             alt="<?= htmlspecialchars($data['hero']['hero_image_alt'] ?? 'Peaceful wellness atmosphere') ?>"
-            class="hero-img">
+            class="hero-img" fetchpriority="high" loading="eager">
     </div>
 
     <div class="container hero-content">
@@ -19,7 +19,8 @@
         </div>
 
         <div class="hero-buttons">
-            <a href="<?= htmlspecialchars($PGW_MESSENGER_URL) ?>" target="_blank" class="btn btn-primary">
+            <a href="<?= htmlspecialchars($data['social']['messenger'] ?? '') ?>" target="_blank"
+                class="btn btn-primary">
                 <img src="assets/images/socials/messenger_icon_white.svg" alt="" width="20" height="20">
                 <?= htmlspecialchars($data['hero']['primary_cta'] ?? 'Enquire now') ?>
             </a>

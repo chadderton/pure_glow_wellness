@@ -1,17 +1,60 @@
 <?php
-// session_start(); // Not needed for public site (cookie-free)
-require_once 'functions.php';
+require_once __DIR__ . '/config/bootstrap.php';
+// $pageTitle comes from defaults in bootstrap/head
 
-$preview = isset($_GET['preview']);
-$file = $preview ? "content/draft.json" : "content/data.json";
-$data = json_decode(file_get_contents($file), true);
+// ---- JSON-LD Schema ----
+$schema = [
+    "@context" => "https://schema.org",
+    "@type" => "LocalBusiness",
+    "@id" => "https://pureglowvibes.co.uk/#localbusiness",
+    "name" => $site['settings']['site_title'] ?? "Pure Glow Wellness",
+    "url" => "https://pureglowvibes.co.uk/",
+    "description" => $site['settings']['meta_description'] ?? "Pure Glow Wellness offers gentle, tailored facials and relaxing massage in a calm private studio in Marple, Stockport.",
+    "image" => "https://pureglowvibes.co.uk/" . ($site['retreat']['image'] ?? "assets/images/retreat/retreatimage-1024w.webp"),
+    "address" => [
+        "@type" => "PostalAddress",
+        "addressLocality" => "Marple",
+        "addressRegion" => "Stockport",
+        "addressCountry" => "GB"
+    ],
+    "areaServed" => [
+        "@type" => "AdministrativeArea",
+        "name" => "Stockport"
+    ],
+    "email" => $site['contact']['email'] ?? "pureglowfacials@gmail.com",
+    "priceRange" => "££",
+];
 
-// Social Media Configuration (pulled from CMS data)
-$PGW_INSTAGRAM_URL = $data['social']['instagram'] ?? "https://instagram.com";
-$PGW_FACEBOOK_PAGE_URL = $data['social']['facebook'] ?? "https://facebook.com";
-$PGW_MESSENGER_URL = $data['social']['messenger'] ?? "https://m.me"; // Note: Added messenger to data
+// Add Social Links
+$sameAs = [];
+if (!empty($site['social']['facebook']))
+    $sameAs[] = $site['social']['facebook'];
+if (!empty($site['social']['instagram']))
+    $sameAs[] = $site['social']['instagram'];
+if (!empty($sameAs)) {
+    $schema["sameAs"] = $sameAs;
+}
+
+// Add Services
+$services = [];
+if (!empty($site['treatments']['list'])) {
+    foreach ($site['treatments']['list'] as $treatment) {
+        $services[] = [
+            "@type" => "Service",
+            "name" => $treatment['title'],
+            "description" => $treatment['description'] ?? ""
+        ];
+    }
+}
+if (!empty($services)) {
+    $schema["serviceOffered"] = $services;
+}
+
+$extraHead = '<script type="application/ld+json">' . json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</script>';
+
+require PARTIALS . '/layout-top.php';
 ?>
 
-<?php include "templates/header.php"; ?>
 <?php include "templates/home.php"; ?>
-<?php include "templates/footer.php"; ?>
+
+<?php require PARTIALS . '/layout-bottom.php'; ?>

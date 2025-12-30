@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <?php
     // Dynamic Canonical & OG URL Generation
-    $prodBase = "https://www.pureglowvibes.co.uk";
+    $prodBase = "https://pureglowvibes.co.uk";
     $reqPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $pathSlug = basename($reqPath);
 
@@ -57,9 +57,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Pure Glow Wellness",
-      "image": "https://www.mthstaging.co.uk/pureglow/assets/images/brand/text_logo.svg",
+      "image": "https://pureglowvibes.co.uk/assets/images/brand/text_logo.svg",
       "description": <?= json_encode($data['settings']['meta_description'] ?? '', JSON_UNESCAPED_SLASHES) ?>,
-      "url": "https://www.mthstaging.co.uk/pureglow/",
+      "url": "https://pureglowvibes.co.uk/",
       "telephone": "+447504800028",
       "email": <?= json_encode($data['contact']['email'] ?? '', JSON_UNESCAPED_SLASHES) ?>,
       "sameAs": [

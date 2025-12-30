@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-# Sitemap: https://www.pureglowvibes.co.uk/sitemap.xml
+# Sitemap: https://pureglowvibes.co.uk/sitemap.xml

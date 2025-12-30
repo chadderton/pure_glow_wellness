@@ -44,10 +44,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // CONFIG
-$SMTP_HOST = 'mail.mthstaging.co.uk';
+$SMTP_HOST = 'mail.pureglowvibes.co.uk';
 $SMTP_PORT = 465;
-$SMTP_USER = 'mailer@mthstaging.co.uk';
-$FROM_EMAIL = 'mailer@mthstaging.co.uk';
+$SMTP_USER = 'mailer@pureglowvibes.co.uk';
+$FROM_EMAIL = 'mailer@pureglowvibes.co.uk';
 $FROM_NAME = 'Pure Glow Wellness';
 $TO_EMAIL = 'pureglowfacials@gmail.com';
 $TO_NAME = 'Pure Glow Wellness';
@@ -90,7 +90,7 @@ try {
   $mail->setFrom($FROM_EMAIL, $FROM_NAME);
   $mail->addAddress($TO_EMAIL, $TO_NAME);
   $mail->addReplyTo($email, $name);
-  $mail->MessageID = sprintf('<%s.%s@%s>', bin2hex(random_bytes(6)), (string) $now, 'mthstaging.co.uk');
+  $mail->MessageID = sprintf('<%s.%s@%s>', bin2hex(random_bytes(6)), (string) $now, 'pureglowvibes.co.uk');
   $mail->addCustomHeader('X-Mailer', 'PureGlowContact/1.0');
 
   // Content
@@ -120,7 +120,7 @@ try {
   $accentColor = '#C1A59B';
 
   // Base URL for assets
-  $prodBase = "https://www.pureglowvibes.co.uk";
+  $prodBase = "https://pureglowvibes.co.uk";
   $logoUrl = $prodBase . "/assets/images/brand/text_logo.png"; // Using PNG as SVG support in email is spotty
 
   $bodyHtml = <<<HTML
@@ -168,7 +168,7 @@ try {
       </div>
     </div>
     <div class="footer">
-      <p>Sent from your website &bull; <a href="https://www.pureglowvibes.co.uk/">pureglowvibes.co.uk</a></p>
+      <p>Sent from your website &bull; <a href="https://pureglowvibes.co.uk/">pureglowvibes.co.uk</a></p>
     </div>
   </div>
 </body>

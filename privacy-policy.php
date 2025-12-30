@@ -1,22 +1,9 @@
 <?php
-// session_start();
-require_once 'functions.php';
-
-$preview = isset($_GET['preview']);
-$file = $preview ? "content/draft.json" : "content/data.json";
-$data = json_decode(file_get_contents($file), true);
-
-// Social Media Configuration (pulled from CMS data)
-$PGW_INSTAGRAM_URL = $data['social']['instagram'] ?? "https://instagram.com";
-$PGW_FACEBOOK_PAGE_URL = $data['social']['facebook'] ?? "https://facebook.com";
-$PGW_MESSENGER_URL = $data['social']['messenger'] ?? "https://m.me";
-
-// Page-specific SEO
-$pageTitle = "Privacy Policy | " . ($data['settings']['site_title'] ?? 'Pure Glow Wellness');
+require_once __DIR__ . '/config/bootstrap.php';
+$pageTitle = "Privacy Policy | " . ($site['settings']['site_title'] ?? 'Pure Glow Wellness');
 $pageDescription = "Privacy Policy for Pure Glow Wellness. Learn how we collect, use, and protect your personal data.";
+require PARTIALS . '/layout-top.php';
 ?>
-
-<?php include "templates/header.php"; ?>
 
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
@@ -84,4 +71,4 @@ $pageDescription = "Privacy Policy for Pure Glow Wellness. Learn how we collect,
             href="mailto:pureglowfacials@gmail.com">pureglowfacials@gmail.com</a>.</p>
 </div>
 
-<?php include "templates/footer.php"; ?>
+<?php require PARTIALS . '/layout-bottom.php'; ?>
